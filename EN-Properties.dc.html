@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Properties — Panorama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FCFBF8;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-kerning:normal}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+img{display:block}
+::selection{background:#1E3A29;color:#FCFBF8}
+[data-mask]{display:block;overflow:hidden}
+[data-mask]>span{display:block;transform:none;transition:transform 1.25s cubic-bezier(.16,.86,.2,1);will-change:transform}
+[data-mask].pre>span{transform:translateY(104%)}
+[data-r]{opacity:1;transition:opacity 1.5s cubic-bezier(.3,.7,.3,1)}
+[data-r].pre{opacity:0}
+[data-rule]{transform-origin:left center;transform:scaleX(1);transition:transform 1.5s cubic-bezier(.16,.86,.2,1)}
+[data-rule].pre{transform:scaleX(0)}
+[data-u]{position:relative;white-space:nowrap}
+[data-u]::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--u,#1E3A29);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.16,.86,.2,1)}
+[data-u]:hover::after{transform:scaleX(1)}
+[data-nav]{display:flex}
+[data-menu]{display:none}
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.44s;animation-timing-function:cubic-bezier(.3,.7,.3,1)}
+header{view-transition-name:masthead}
+[data-folio]{position:fixed;right:40px;bottom:26px;z-index:70;display:flex;align-items:baseline;gap:14px;font:400 11px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;font-variant-numeric:tabular-nums;color:var(--fol,#4E5349);opacity:0;transform:translateY(6px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,.86,.2,1),color .8s ease;pointer-events:none;mix-blend-mode:multiply}
+[data-folio].on{opacity:1;transform:translateY(0)}
+[data-folio] b{font-weight:400;color:var(--folk,#141714)}
+[data-folio] i{font-style:normal;opacity:.5}
+@media (max-width:900px){[data-folio]{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}[data-mask]>span{transform:none!important}[data-r]{opacity:1!important}[data-rule]{transform:none!important}}
+@media (max-width:1180px){[data-nav]{display:none!important}[data-menu]{display:block!important}}
+@media (max-width:900px){[data-cell]{grid-column:1/-1!important}[data-listing]{grid-template-columns:56px minmax(0,1fr) minmax(0,1fr)!important}[data-listing]>*:nth-child(4),[data-listing]>*:nth-child(5){grid-column:2}}
+</style>
+</helmet>
+
+<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;--wd:112;padding-bottom:42px">
+
+<div data-folio aria-hidden="true"><b></b><i></i></div>
+<header style="position:fixed;top:0;left:0;right:0;z-index:80;background:#FCFBF8;border-bottom:1px solid rgba(30,58,41,.18)">
+<div style="padding:26px 40px;display:flex;align-items:center;gap:40px">
+<a href="./EN-Home.dc.html" style="flex:none;display:block;width:128px;height:16.9px">
+<img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:128px;height:16.9px;object-fit:contain;object-position:left center">
+</a>
+<nav data-nav style="align-items:center;gap:30px;margin-left:auto">
+<a data-u href="./EN-Advisory-and-management.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Advisory and management</a>
+<a data-u href="./EN-Brokerage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Brokerage</a>
+<a data-u href="./EN-Indigenous-real-estate.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Indigenous real estate</a>
+<a data-u href="./EN-Firm.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Firm</a>
+<a data-u href="./EN-Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Contact</a>
+<a data-u href="./Proprietes.dc.html" style="margin-left:10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">FR</a>
+</nav>
+<span data-menu onClick="{{ toggleMenu }}" style="margin-left:auto;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#141714;cursor:pointer;user-select:none">{{ menuLabel }}</span>
+</div>
+</header>
+
+<div style="{{ panelStyle }}">
+<div style="padding:90px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
+<a data-u onClick="{{ closeMenu }}" href="./EN-Advisory-and-management.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Advisory and management</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Brokerage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Brokerage</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Indigenous-real-estate.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Indigenous real estate</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Firm.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Firm</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
+<a data-u onClick="{{ closeMenu }}" href="./Proprietes.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">Français</a>
+</div>
+</div>
+
+<div data-rail style="position:fixed;left:0;right:0;bottom:0;z-index:78;background:#FCFBF8;border-top:1px solid rgba(30,58,41,.18)">
+<div style="position:absolute;top:-1px;left:0;height:1px;background:#1E3A29;width:{{ railProgress }}"></div>
+<div style="padding:13px 40px;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:400 11px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase">
+<span style="color:#141714;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ railLabel }}</span>
+<span style="color:#4E5349;flex:none">{{ railCount }}</span>
+</div>
+</div>
+
+<section data-screen-label="00 Properties" style="background:#FCFBF8;padding:clamp(116px,11.5vw,168px) 0 clamp(60px,7vw,104px)">
+<div style="padding:0 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
+<div data-cell style="grid-column:1/11">
+<p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Properties</p>
+<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.046em;color:#141714">
+<span data-mask><span>Current</span></span>
+<span data-mask><span>listings.</span></span>
+</h1>
+</div>
+<div data-cell style="grid-column:11/13;padding-bottom:8px">
+<div data-r style="display:flex;flex-direction:column;gap:12px;font:400 11px/1.7 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
+<span>Leasing</span>
+<span>Sale</span>
+</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="01 Listings" style="background:#F3F0E9;padding:0 0 clamp(66px,7.6vw,116px)">
+<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
+<span data-r>01 — Listings</span>
+<span data-r style="color:#4E5349">04</span>
+</div>
+
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px)">
+<div data-cell style="grid-column:1/8">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.06;letter-spacing:-.042em;color:#141714">
+<span data-mask><span>Four buildings</span></span>
+<span data-mask><span>currently listed.</span></span>
+</h2>
+</div>
+<div data-cell style="grid-column:9/13">
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Active listings are kept current from the management application. One line per building; the full listing, plans and documents open on click.</p>
+</div>
+</div>
+
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0">
+<div data-r style="border-top:1px solid rgba(30,58,41,.28)">
+
+<div data-listing style="display:grid;grid-template-columns:56px clamp(150px,17vw,260px) minmax(0,3.2fr) minmax(0,1.3fr) minmax(0,1.5fr);gap:clamp(14px,2vw,32px);padding:14px 8px 16px 0;border-bottom:1px solid rgba(30,58,41,.22);font:500 11px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">
+<span>Ref</span><span></span><span>Address</span><span>Area</span><span>Price</span>
+</div>
+
+<a data-listing href="https://agencepanorama.ca/properties/12340261/" style="display:grid;grid-template-columns:56px clamp(150px,17vw,260px) minmax(0,3.2fr) minmax(0,1.3fr) minmax(0,1.5fr);gap:clamp(14px,2vw,32px);align-items:start;padding:clamp(20px,2.2vw,28px) 8px clamp(22px,2.4vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11);text-decoration:none;color:inherit">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
+<img src="https://app.sync.quebec/storage/centris/12340261/ADDC89EDA4AD7E6DD97C74ED1C.jpeg" alt="5826 Richelieu Street" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
+<span style="display:flex;flex-direction:column;gap:10px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">5826 Richelieu Street</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Lac-Mégantic — Land</span>
+<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Former military drill hall rehabilitated in 2019, soils to criterion B. Sale by the Government of Canada.</span>
+</span>
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">129,629 sq. ft.</span>
+<span style="display:flex;flex-direction:column;gap:8px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">$138,000</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">For sale — plus GST/QST</span>
+</span>
+</a>
+
+<a data-listing href="https://agencepanorama.ca/properties/12909366/" style="display:grid;grid-template-columns:56px clamp(150px,17vw,260px) minmax(0,3.2fr) minmax(0,1.3fr) minmax(0,1.5fr);gap:clamp(14px,2vw,32px);align-items:start;padding:clamp(20px,2.2vw,28px) 8px clamp(22px,2.4vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11);text-decoration:none;color:inherit">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
+<img src="https://app.sync.quebec/storage/centris/28658749/ADDC89EDE96209BD19EC723D4F.jpeg" alt="266 Notre-Dame Street West — 301-303" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
+<span style="display:flex;flex-direction:column;gap:10px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266 Notre-Dame Street West — 301-303</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Montréal (Ville-Marie) — Offices, 3rd floor</span>
+<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Heritage building from 1884, Old Montréal. Windows on three sides.</span>
+</span>
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">5,069 sq. ft.</span>
+<span style="display:flex;flex-direction:column;gap:8px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">$2,695,000</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">For sale — plus GST/QST</span>
+</span>
+</a>
+
+<a data-listing href="https://agencepanorama.ca/properties/23584644/" style="display:grid;grid-template-columns:56px clamp(150px,17vw,260px) minmax(0,3.2fr) minmax(0,1.3fr) minmax(0,1.5fr);gap:clamp(14px,2vw,32px);align-items:start;padding:clamp(20px,2.2vw,28px) 8px clamp(22px,2.4vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11);text-decoration:none;color:inherit">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
+<img src="https://app.sync.quebec/storage/centris/28658749/ADDC89EDE96209AD19EC723D2B.jpeg" alt="266 Notre-Dame Street West — 401-403" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
+<span style="display:flex;flex-direction:column;gap:10px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266 Notre-Dame Street West — 401-403</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Montréal (Ville-Marie) — Offices, 4th floor</span>
+<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Three units on the top floor, steps from the Square-Victoria and Place-d’Armes metro stations.</span>
+</span>
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">5,153 sq. ft.</span>
+<span style="display:flex;flex-direction:column;gap:8px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">$2,850,000</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">For sale — plus GST/QST</span>
+</span>
+</a>
+
+<a data-listing href="https://agencepanorama.ca/properties/28658749/" style="display:grid;grid-template-columns:56px clamp(150px,17vw,260px) minmax(0,3.2fr) minmax(0,1.3fr) minmax(0,1.5fr);gap:clamp(14px,2vw,32px);align-items:start;padding:clamp(20px,2.2vw,28px) 8px clamp(22px,2.4vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11);text-decoration:none;color:inherit">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
+<img src="https://app.sync.quebec/storage/centris/28658749/ADDC89EDE962090D19EC723D10.jpeg" alt="266 Notre-Dame Street West — full floors" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
+<span style="display:flex;flex-direction:column;gap:10px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266 Notre-Dame Street West — full floors</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Montréal (Ville-Marie) — Offices, 3rd and 4th floors</span>
+<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Six units across two floors, available for the first time in 42 years.</span>
+</span>
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">10,222 sq. ft.</span>
+<span style="display:flex;flex-direction:column;gap:8px">
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">$5,385,000</span>
+<span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">For sale — plus GST/QST</span>
+</span>
+</a>
+
+</div>
+</div>
+</section><section data-screen-label="02 List a building" style="background:#1E3A29;color:#FAF8F3;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
+<div data-rule style="height:1px;background:rgba(247,245,240,.34)"></div>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,240,.62)">
+<span data-r>02 — List a building</span>
+<span data-r>Brokerage</span>
+</div>
+
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
+<div data-cell style="grid-column:1/10">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.048em;color:#FAF8F3">
+<span data-mask><span>Value demonstrated</span></span>
+<span data-mask><span>before going</span></span>
+<span data-mask><span>to market.</span></span>
+</h2>
+</div>
+<div data-cell style="grid-column:10/13">
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:rgba(247,245,240,.7);text-wrap:pretty">Income, leases and development potential are documented up front, so that negotiation opens on your numbers.</p>
+<div data-r style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:clamp(22px,2.6vw,40px);padding-top:22px;border-top:1px solid rgba(247,245,240,.24)">
+<a data-u href="./EN-Brokerage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">The Brokerage division</a>
+<a data-u href="./EN-Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">Discuss a mandate</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer data-screen-label="03 Contact details" style="background:#FCFBF8;padding:0 0 40px">
+<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
+<div data-cell style="grid-column:1/5">
+<img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:120px;height:15.8px;object-fit:contain;object-position:left center">
+<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Real estate advisory firm</p>
+</div>
+<div data-cell style="grid-column:6/8">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Get in touch</p>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+<a data-u href="mailto:kwe@panoramaadvisory.ca" style="font:400 16px/1.4 'Archivo',sans-serif;color:#141714">Write to us</a>
+<a data-u href="tel:+15142898222" style="font:400 16px/1.4 'Archivo',sans-serif;color:#141714">514.289.8222</a>
+</div>
+</div>
+<div data-cell style="grid-column:8/11">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Office</p>
+<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>P.O. Box 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
+</div>
+<div data-cell style="grid-column:11/13">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Links</p>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+<a data-u href="./EN-Home.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Home</a>
+<a data-u href="#" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">LinkedIn</a>
+<a data-u href="./EN-Privacy.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Privacy</a>
+<a data-u href="./EN-Legal-notice.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Legal notices</a>
+</div>
+</div>
+</div>
+<div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding-top:20px;border-top:1px solid rgba(30,58,41,.14);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
+<span>© 2026 Panorama</span>
+<span>Real estate agency — OACIQ licence H0531</span>
+</div>
+</div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:100,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
+class Component extends DCLogic {
+  state = { menu: false, rail: null };
+
+  applyVars() {
+    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 112));
+  }
+
+  setup = () => {
+    if (!this._io) {
+      this._io = new IntersectionObserver((es) => {
+        es.forEach((e) => {
+          if (!e.isIntersecting && e.boundingClientRect.top >= 0) return;
+          e.target.classList.remove('pre');
+          e.target.classList.add('in');
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.02 });
+    }
+    document.querySelectorAll('[data-r],[data-mask],[data-rule]').forEach((el) => {
+      if (el.classList.contains('in')) return;
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.98) {
+        el.classList.remove('pre');
+        el.classList.add('in');
+        return;
+      }
+      if (el.dataset.obs) return;
+      el.dataset.obs = '1';
+      el.classList.add('pre');
+      this._io.observe(el);
+    });
+    document.querySelectorAll('h1,h2,blockquote').forEach((h) => {
+      if (h.dataset.stag) return;
+      h.dataset.stag = '1';
+      h.querySelectorAll('[data-mask]>span').forEach((s, i) => {
+        s.style.transitionDelay = i * 105 + 'ms';
+      });
+    });
+    this.failOpen();
+  };
+
+  failOpen = () => {
+    document.querySelectorAll('.pre').forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 1.02) {
+        el.classList.remove('pre');
+        el.classList.add('in');
+      }
+    });
+  };
+
+  folio = () => {
+    const rail = document.querySelector('[data-folio]');
+    if (!rail || this._folioReady) return;
+    const secs = [...document.querySelectorAll('[data-screen-label]')]
+      .map((el) => {
+        const raw = el.dataset.screenLabel || '';
+        return { el, n: (raw.match(/^\d+/) || [''])[0], label: raw.replace(/^\d+\s*/, '') };
+      })
+      .filter((s) => s.n);
+    if (!secs.length) return;
+    this._folioReady = true;
+
+    const total = String(secs.length).padStart(2, '0');
+    const num = rail.firstElementChild, lab = rail.lastElementChild;
+    const show = (s) => {
+      const dark = getComputedStyle(s.el).backgroundColor === 'rgb(30, 58, 41)';
+      rail.style.setProperty('--fol', dark ? 'rgba(247,245,240,.62)' : '#4E5349');
+      rail.style.setProperty('--folk', dark ? '#FAF8F3' : '#141714');
+      rail.style.mixBlendMode = dark ? 'normal' : 'multiply';
+      const t = s.n + ' / ' + total;
+      if (num.textContent !== t) num.textContent = t;
+      if (lab.textContent !== s.label) lab.textContent = s.label;
+      rail.classList.toggle('on', s.n !== '00');
+    };
+
+    this._fio = new IntersectionObserver((entries) => {
+      const hit = entries.find((e) => e.isIntersecting);
+      if (!hit) return;
+      const s = secs.find((x) => x.el === hit.target);
+      if (s) show(s);
+    }, { rootMargin: '-40% 0px -59% 0px', threshold: 0 });
+    secs.forEach((s) => this._fio.observe(s.el));
+  };
+
+  componentDidUpdate() { this.applyVars(); this.setup(); }
+
+  componentDidMount() {
+    this.applyVars();
+    this.setup();
+    this._safety = setTimeout(this.failOpen, 1700);
+    this.folio();
+    this._onScroll = () => this.failOpen();
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('scroll', this.trackRail, { passive: true });
+    this.trackRail();
+    window.addEventListener('resize', this._onScroll);
+    window.addEventListener('resize', this.trackRail);
+    this._onScroll();
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._fio) this._fio.disconnect();
+    clearTimeout(this._safety);
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('scroll', this.trackRail);
+    window.removeEventListener('resize', this._onScroll);
+    window.removeEventListener('resize', this.trackRail);
+  }
+
+
+  trackRail = () => {
+    const secs = [...document.querySelectorAll('[data-screen-label]')];
+    if (!secs.length) return;
+    const line = window.innerHeight * 0.42;
+    let i = 0;
+    secs.forEach((s, n) => { if (s.getBoundingClientRect().top <= line) i = n; });
+    const doc = document.documentElement;
+    const span = doc.scrollHeight - window.innerHeight;
+    const p = span > 0 ? Math.min(1, Math.max(0, window.scrollY / span)) : 0;
+    const num = (el) => ((el.dataset.screenLabel || '').match(/^\d+/) || ['00'])[0];
+    const raw = secs[i].dataset.screenLabel || '';
+    const cut = raw.indexOf(' ');
+    const label = cut > 0 ? raw.slice(0, cut) + ' — ' + raw.slice(cut + 1) : raw;
+    const r = this.state.rail;
+    if (!r || r.label !== label || Math.abs(r.p - p) > 0.004) {
+      this.setState({ rail: { label, i: num(secs[i]), n: num(secs[secs.length - 1]), p } });
+    }
+  };
+
+  renderVals() {
+    const open = this.state.menu;
+    return {
+      toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      menuLabel: open ? 'Close' : 'Menu',
+      railLabel: (this.state.rail && this.state.rail.label) || '',
+      railCount: this.state.rail ? this.state.rail.i + ' / ' + this.state.rail.n : '',
+      railProgress: ((this.state.rail ? this.state.rail.p : 0) * 100).toFixed(2) + '%',
+      panelStyle: [
+        'position:fixed', 'top:0', 'left:0', 'right:0', 'z-index:75',
+        'background:#FCFBF8', 'border-bottom:1px solid rgba(30,58,41,.22)', 'overflow:hidden',
+        'transition:opacity .36s ease, transform .5s cubic-bezier(.16,.86,.2,1)',
+        open ? 'opacity:1;transform:translateY(0);pointer-events:auto'
+             : 'opacity:0;transform:translateY(-14px);pointer-events:none'
+      ].join(';')
+    };
+  }
+}
+
+</script>
+</body>
+</html>
