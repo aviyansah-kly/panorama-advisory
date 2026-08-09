@@ -9,7 +9,8 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Indigenous real estate — Panorama</title>
+<title>Panorama — Indigenous real estate and economic development advisory</title>
+<meta name="description" content="Real estate and economic development advisory for First Nations and Indigenous organizations: reserve land, ownership structure, acquisition, development, transactions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@ a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
 img{display:block}
 ::selection{background:#1E3A29;color:#FCFBF8}
-[data-mask]{display:block;overflow:hidden}
+[data-mask]{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 [data-mask]>span{display:block;transform:none;transition:transform 1.25s cubic-bezier(.16,.86,.2,1);will-change:transform}
 [data-mask].pre>span{transform:translateY(104%)}
 [data-r]{opacity:1;transition:opacity 1.5s cubic-bezier(.3,.7,.3,1)}
@@ -53,7 +54,7 @@ header{view-transition-name:masthead}
 </style>
 </helmet>
 
-<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;--wd:112;padding-bottom:42px">
+<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;padding-bottom:42px">
 
 <div data-folio aria-hidden="true"><b></b><i></i></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;background:#FCFBF8;border-bottom:1px solid rgba(30,58,41,.18)">
@@ -64,6 +65,7 @@ header{view-transition-name:masthead}
 <nav data-nav style="align-items:center;gap:30px;margin-left:auto">
 <a data-u href="./EN-Advisory-and-management.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Advisory and management</a>
 <a data-u href="./EN-Brokerage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Brokerage</a>
+<a data-u href="./EN-Public-sector.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Public sector</a>
 <a data-u href="./EN-Indigenous-real-estate.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141714">Indigenous real estate</a>
 <a data-u href="./EN-Firm.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Firm</a>
 <a data-u href="./EN-Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Contact</a>
@@ -75,11 +77,12 @@ header{view-transition-name:masthead}
 
 <div style="{{ panelStyle }}">
 <div style="padding:90px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
-<a data-u onClick="{{ closeMenu }}" href="./EN-Advisory-and-management.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Advisory and management</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Brokerage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Brokerage</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Indigenous-real-estate.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Indigenous real estate</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Firm.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Firm</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Advisory-and-management.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Advisory and management</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Brokerage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Brokerage</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Public-sector.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Public sector</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Indigenous-real-estate.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#141714">Indigenous real estate</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Firm.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Firm</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Contact</a>
 <a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">Français</a>
 </div>
 </div>
@@ -95,11 +98,12 @@ header{view-transition-name:masthead}
 <section data-screen-label="00 Indigenous real estate" style="background:#FCFBF8;padding:clamp(116px,11.5vw,168px) 0 clamp(60px,7vw,104px)">
 <div style="padding:0 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
 <div data-cell style="grid-column:1/10">
-<p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Practice area — Indigenous real estate</p>
-<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.046em;color:#141714">
-<span data-mask><span>An Indigenous firm in</span></span>
-<span data-mask><span>commercial, industrial and</span></span>
-<span data-mask><span>institutional real estate.</span></span>
+<p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Practice area — Indigenous real estate and economic development</p>
+<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(40px,7vw,112px);line-height:1;letter-spacing:-.056em;color:#141714">
+<span data-mask><span>Commercial, industrial</span></span>
+<span data-mask><span>and institutional</span></span>
+<span data-mask><span>real estate, led by a</span></span>
+<span data-mask><span>First Nations firm.</span></span>
 </h1>
 </div>
 <div data-cell style="grid-column:10/13;padding-bottom:6px">
@@ -119,33 +123,33 @@ header{view-transition-name:masthead}
 <div data-r style="border-top:1px solid rgba(30,58,41,.28)">
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Reserve lands</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">In Canada, reserve lands are for the most part not financed like other land. The Indian Act restricts seizure, which rules out the conventional mortgage and requires structures built on designation, long-term lease or ministerial guarantee. The regime varies from one nation to the next, depending on whether it has adopted its own land code or concluded a self-government agreement.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Reserve lands</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">In Canada these are mostly not financed like other property. The Indian Act restricts seizure, which rules out the conventional mortgage and requires structures built on designation, long-term lease or ministerial guarantee. The regime varies from one nation to the next, depending on whether it has adopted its own land code or concluded a self-government agreement.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Off reserve</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Off reserve, many Indigenous organizations run into a different obstacle. A good part of their revenue comes from multi-year funding agreements that lenders read poorly. The work is then as much about explaining a revenue structure as it is about negotiating a price.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Off reserve</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Off reserve, many Indigenous organizations run into a different obstacle. Much of their revenue comes from multi-year funding agreements that lenders read poorly. The work is then as much about explaining a revenue structure as negotiating a price.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Timelines</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Timelines differ as well. A community real estate decision generally goes through a council, sometimes through a consultation of members, and follows federal funding cycles. A standard transaction schedule does not hold.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Timelines</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Timelines differ. A community real estate decision goes through a council, sometimes a consultation of members, and follows federal funding cycles. A standard transaction schedule does not hold.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section data-screen-label="02 Organizations served" style="background:#F3F0E9;padding:0 0 clamp(66px,7.6vw,116px);--rh:rgba(30,58,41,.045)">
+<section data-screen-label="02 Clients" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px);--rh:rgba(30,58,41,.045)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>02 — Organizations we serve</span>
+<span data-r>02 — Clients</span>
 <span data-r style="color:#4E5349">05</span>
 </div>
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 <div data-cell style="grid-column:1/5">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.06;letter-spacing:-.042em;color:#141714">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
 <span data-mask><span>Five families</span></span>
 <span data-mask><span>of clients.</span></span>
 </h2>
@@ -154,62 +158,79 @@ header{view-transition-name:masthead}
 <div data-r style="border-top:1px solid rgba(30,58,41,.28)">
 <div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Band councils and nation governments</p>
+<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Band councils and nation governments</p>
 </div>
 <div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Urban Indigenous service organizations</p>
+<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Urban Indigenous service organizations</p>
 </div>
 <div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Economic development corporations</p>
+<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Economic development corporations</p>
 </div>
 <div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Health, justice and education organizations</p>
+<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Health, justice and education organizations</p>
 </div>
 <div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">05</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Indigenous businesses</p>
+<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.24;letter-spacing:-.03em;color:#141714">Indigenous businesses</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<section data-screen-label="03 The moment" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="03 Services" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>03 — The moment</span>
-<span data-r style="color:#4E5349">03</span>
+<span data-r>03 — Services</span>
+<span data-r style="color:#4E5349">08</span>
 </div>
-
-<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px)">
-<div data-cell style="grid-column:1/10">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.02;letter-spacing:-.046em;color:#141714">
-<span data-mask><span>The capital is there.</span></span>
-<span data-mask><span>The structure is missing.</span></span>
-</h2>
+<div style="padding:clamp(52px,5.8vw,88px) 40px 0">
+<div data-r style="margin:0;padding-bottom:clamp(16px,1.8vw,22px);border-bottom:1px solid rgba(30,58,41,.28);display:flex;align-items:baseline;gap:clamp(16px,2.2vw,36px)">
+<span style="flex:none;width:56px;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;color:#1E3A29">08</span>
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(26px,2.6vw,38px);line-height:1.1;letter-spacing:-.038em;color:#1E3A29">Land, capital, development</h2>
 </div>
-</div>
-
-<div style="padding:clamp(34px,4vw,60px) 40px 0">
-<div data-r style="border-top:1px solid rgba(30,58,41,.28)">
-<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">The capital exists</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The Canada Indigenous Loan Guarantee Corporation administers a ten-billion-dollar federal program for Indigenous equity participation in major projects. Across the country, roughly seventeen billion in guarantee capacity is available; by mid-2026, close to 1.8 billion had been deployed, across twenty-six transactions. Money is not what is missing.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Real estate investment strategy</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">What the organization should hold, in what form, and what each holding is expected to return over the period that matters to the council.</p>
 </div>
-<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Quebec starts further back</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Quebec has no provincial loan guarantee program comparable to those of Alberta or Ontario. Nations here therefore build their files with fewer tools than their neighbours, at the exact moment when demand on their territories — critical minerals, energy, infrastructure — is intensifying.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Land and asset strategy</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Reserve, fee simple, designated and leasehold interests do not behave alike. What can be held, financed or transferred follows from the tenure, not from the building.</p>
 </div>
-<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">What is blocking is real estate</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Between guarantee capacity and an asset actually held, there is a chain of work: valuation, ownership structure, lease, governance, council calendar, accountability. That is real estate work, and it is ours.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Acquisition advisory</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Tenure, zoning, servitudes and building condition are established before the offer, together with the financing structure the land regime allows.</p>
 </div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Disposition advisory</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Which assets to release, in what order and on what timing, documented before anything is brought to market.</p>
+</div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">05</span>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Development advisory</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Use, regulation and financial structure are tested against the community approval calendar rather than a standard construction schedule.</p>
+</div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">06</span>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Economic development strategy</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Real estate is one instrument among several. We set out what the land and the buildings can carry, and what they cannot.</p>
+</div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">07</span>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Strategic partnerships and investment analysis</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Ownership structure, participation, governance and reporting, examined before a partner is brought in.</p>
+</div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">08</span>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Transaction advisory and execution</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">We carry the file through negotiation and closing, on both the council cycle and the funding cycle.</p>
 </div>
 </div>
 </section>
@@ -220,18 +241,40 @@ header{view-transition-name:masthead}
 </div>
 <div style="padding:16px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">
 <span data-r>Territory</span>
-<span data-r>Licence to be confirmed</span>
 </div>
 </div>
 
-<section data-screen-label="04 Project" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="04 The market" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px);--rh:rgba(30,58,41,.045)">
+<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
+<span data-r>04 — The market</span>
+<span data-r style="color:#4E5349">Context</span>
+</div>
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
+<div data-cell style="grid-column:1/9">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(34px,5.4vw,94px);line-height:1;letter-spacing:-.054em;color:#141714">
+<span data-mask><span>The capital is there.</span></span>
+<span data-mask><span>The structuring is not.</span></span>
+</h2>
+</div>
+<div data-cell style="grid-column:1/7">
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The Canada Indigenous Loan Guarantee Corporation administers a federal loan guarantee programme for Indigenous equity participation in major projects. Its capacity is far larger than what has been drawn against it.</p>
+<p data-r style="margin:clamp(18px,2vw,26px) 0 0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Quebec holds no equivalent provincial guarantee. Nations here build their files with fewer tools than their neighbours, at the moment when demand on their territories for critical minerals, energy and infrastructure is intensifying.</p>
+</div>
+<div data-cell style="grid-column:8/13">
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Between guarantee capacity and an asset actually held there is a chain of work. Opinion of value, ownership structure, lease, governance, council calendar and reporting. That chain is real estate work and it is ours.</p>
+</div>
+</div>
+</section>
+
+<section data-screen-label="05 Project" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px clamp(32px,3.8vw,58px);display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>04 — Project underway</span>
+<span data-r>05 — Project underway</span>
 <span data-r style="color:#4E5349">02</span>
 </div>
 <div data-r data-fig style="width:100%;height:clamp(300px,62vh,660px);overflow:hidden;background:#FCFBF8">
-<img src="./uploads/1-2-1c3d3d55.png" alt="Development project in an Indigenous community — site plan" style="width:100%;height:100%;object-fit:cover;object-position:center 52%">
+<img src="./uploads/1 (2)-1c3d3d55.png" alt="Development project in an Indigenous community — site plan" style="width:100%;height:100%;object-fit:cover;object-position:center 52%">
 </div>
 <div style="padding:16px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">
 <span data-r>01 — Development project in an Indigenous community</span>
@@ -250,22 +293,22 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="05 Testimonial" style="background:#1E3A29;color:#FAF8F3;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="06 Testimonial" style="background:#12241B;color:#F2EFE6;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:rgba(247,245,240,.34)"></div>
-<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,240,.62)">
-<span data-r>05 — Testimonial</span>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8FB39B">
+<span data-r>06 — Testimonial</span>
 <span data-r>Tiohtià:ke</span>
 </div>
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 <div data-cell style="grid-column:1/10">
-<blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.1;letter-spacing:-.042em;color:#FAF8F3">
+<blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(26px,3.2vw,55px);line-height:1.1;letter-spacing:-.042em;color:#FAF8F3">
 <span data-mask><span>“Panorama understands our decision</span></span>
 <span data-mask><span>processes and our reality.”</span></span>
 </blockquote>
 </div>
 <div data-cell style="grid-column:1/7">
-<p data-r style="margin:0;font:500 11px/1.8 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:rgba(247,245,240,.62)">Ellen Filippelli — Executive Director<br>First Peoples Justice Center of Tiohtià:ke</p>
+<p data-r style="margin:0;font:500 11px/1.8 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#8FB39B">Ellen Filippelli, Executive Director<br>First Peoples Justice Centre of Tiohtià:ke</p>
 </div>
 <div data-cell style="grid-column:10/13">
 <div data-r style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-top:22px;border-top:1px solid rgba(247,245,240,.24)">
@@ -276,12 +319,12 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<footer data-screen-label="06 Contact details" style="background:#FCFBF8;padding:0 0 40px">
+<footer data-screen-label="07 Contact details" style="background:#FCFBF8;padding:0 0 40px">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
 <div data-cell style="grid-column:1/5">
 <img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:120px;height:15.8px;object-fit:contain;object-position:left center">
-<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Real estate advisory firm</p>
+<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Strategic real estate advisory</p>
 </div>
 <div data-cell style="grid-column:6/8">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Get in touch</p>
@@ -292,12 +335,13 @@ header{view-transition-name:masthead}
 </div>
 <div data-cell style="grid-column:8/11">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Office</p>
-<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>P.O. Box 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
+<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>Suite 200, P.O. Box 1848<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
 </div>
 <div data-cell style="grid-column:11/13">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Links</p>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
 <a data-u href="./EN-Home.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Home</a>
+<a data-u href="./EN-Properties.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Properties</a>
 <a data-u href="#" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">LinkedIn</a>
 <a data-u href="./EN-Privacy.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Privacy</a>
 <a data-u href="./EN-Legal-notice.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Legal notices</a>
@@ -307,7 +351,7 @@ header{view-transition-name:masthead}
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
 <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding-top:20px;border-top:1px solid rgba(30,58,41,.14);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
 <span>© 2026 Panorama</span>
-<span>Real estate agency — OACIQ licence H0531</span>
+<span>OACIQ licence H0531</span>
 </div>
 </div>
 </footer>
@@ -315,12 +359,12 @@ header{view-transition-name:masthead}
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:100,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:94,&quot;min&quot;:80,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
 class Component extends DCLogic {
   state = { menu: false, rail: null };
 
   applyVars() {
-    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 112));
+    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 94));
   }
 
   setup = () => {

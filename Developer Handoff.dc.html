@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Panorama — Developer Handoff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+doc-page:not(:defined){visibility:hidden}
+</style>
+</helmet>
+
+<doc-page margin="0.85in">
+
+<div style="font-family:'Archivo',sans-serif;color:#141714">
+
+<p style="margin:0 0 34px;font:500 10px/1.7 'Archivo',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#1E3A29">Les Services immobiliers Panorama Inc. — Developer handoff</p>
+
+<h1 style="margin:0 0 26px;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' 112;font-size:44px;line-height:1.02;letter-spacing:-.042em;color:#141714">Website build specification</h1>
+
+<p style="margin:0 0 40px;max-width:60ch;font:400 15px/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">This package contains a complete, finished design for the Panorama website in French and English — twenty pages of production-ready markup, copy, imagery and typography. It is a reference build, not a deployable site. This document describes what is included, what has to be rebuilt, and what remains to be connected.</p>
+
+<div style="padding:22px 0 0;border-top:1px solid rgba(30,58,41,.3);margin-bottom:44px">
+<p style="margin:0 0 14px;font:500 10px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">01 — What you have received</p>
+<p style="margin:0 0 18px;max-width:62ch;font:400 15px/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Each page is a single self-contained HTML file that opens directly in a browser. All layout is inline CSS, so nothing depends on an external stylesheet or build step. The markup, the type scale, the colour values and the final approved copy are all readable in the source.</p>
+
+<table style="width:100%;border-collapse:collapse;font:400 13px/1.6 'Archivo',sans-serif;color:#33372F">
+<thead>
+<tr>
+<th style="text-align:left;padding:0 14px 10px 0;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">French page</th>
+<th style="text-align:left;padding:0 14px 10px 0;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">English page</th>
+<th style="text-align:left;padding:0 0 10px;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Suggested route</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Accueil</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Home</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/ · /en</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Conseil-et-gestion</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Advisory-and-management</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/conseil-gestion</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Courtage</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Brokerage</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/courtage</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Secteur-public</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Public-sector</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/secteur-public</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Immobilier-autochtone</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Indigenous-real-estate</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/immobilier-autochtone</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Cabinet</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Firm</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/cabinet</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Proprietes</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Properties</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/proprietes</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Contact</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Contact</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/contact</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Confidentialite</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Privacy</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/confidentialite</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Mentions-legales</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">EN-Legal-notice</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">/mentions-legales</td></tr>
+</tbody>
+</table>
+
+<p style="margin:20px 0 0;max-width:62ch;font:400 13px/1.66 'Archivo',sans-serif;color:#4E5349;text-wrap:pretty">The <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">assets/</span> folder holds the two wordmark files (ink for light backgrounds, paper for dark). The <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">uploads/</span> folder holds all photography, already compressed for web.</p>
+</div>
+
+<div style="padding:22px 0 0;border-top:1px solid rgba(30,58,41,.3);margin-bottom:44px">
+<p style="margin:0 0 14px;font:500 10px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">02 — Design system</p>
+
+<p style="margin:0 0 20px;max-width:62ch;font:400 15px/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Two typefaces, both from Google Fonts. Archivo is a variable font and the design uses a width axis setting of 94 on all display type — this matters, and a static Archivo will not reproduce it.</p>
+
+<table style="width:100%;border-collapse:collapse;font:400 13px/1.6 'Archivo',sans-serif;color:#33372F;margin-bottom:26px">
+<thead>
+<tr>
+<th style="text-align:left;padding:0 14px 10px 0;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Role</th>
+<th style="text-align:left;padding:0 14px 10px 0;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Family</th>
+<th style="text-align:left;padding:0 0 10px;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Display and body</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Archivo, weights 400 and 500</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Variable; <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">font-variation-settings: 'wdth' 94</span></td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Numerals and metadata</td><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1)">IBM Plex Mono, weights 400 and 500</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Section numbers, areas, prices</td></tr>
+</tbody>
+</table>
+
+<p style="margin:0 0 14px;font:500 10px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Type scale</p>
+<p style="margin:0 0 24px;max-width:62ch;font:400 14px/1.75 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">All display sizes are fluid via <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">clamp()</span>; the values below are the desktop maximums. 11px uppercase with letter-spacing for labels, section numbers, navigation and the footer. 11px IBM Plex Mono for numerals and metadata. 13px for footer links. 16px for contact details. 18px for running body text at line-height 1.66. 22px for service titles, 26px for legal subheadings. 38px for the inline heading in numbered lists. 62px and 94px for section headings. 112px for page headlines. Do not introduce intermediate sizes.</p>
+
+<p style="margin:0 0 14px;font:500 10px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Palette</p>
+<table style="width:100%;border-collapse:collapse;font:400 13px/1.6 'Archivo',sans-serif;color:#33372F">
+<tbody>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px;width:110px">#FCFBF8</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Paper — default page background</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#EFE9DC</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Warm paper — alternating sections</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#1E3A29</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Green — rules, labels, accents, home page slab</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#12241B</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Deep green — closing sections on inner pages</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#8FB39B</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Sage — labels on green</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#141714</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Ink — headings and primary text</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#33372F</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Body text</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#4E5349</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Secondary text and labels</td></tr>
+<tr><td style="padding:9px 14px 9px 0;border-bottom:1px solid rgba(30,58,41,.1);font-family:'IBM Plex Mono',monospace;font-size:12px">#FAF8F3</td><td style="padding:9px 0;border-bottom:1px solid rgba(30,58,41,.1)">Text on green</td></tr>
+</tbody>
+</table>
+
+<p style="margin:20px 0 0;max-width:62ch;font:400 14px/1.7 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Layout is a twelve-column grid with a 40px page gutter and fluid column gaps. Section headers use a hairline rule with the section number on the left and a short label on the right. Nothing has rounded corners; nothing has a drop shadow. That restraint is the design.</p>
+</div>
+
+<div style="padding:22px 0 0;border-top:1px solid rgba(30,58,41,.3);margin-bottom:44px;break-before:page">
+<p style="margin:0 0 14px;font:500 10px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">03 — Interactions to reproduce</p>
+<p style="margin:0 0 20px;max-width:62ch;font:400 15px/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The motion is deliberately quiet. Every effect below already exists in the source files and can be lifted directly.</p>
+
+<table style="width:100%;border-collapse:collapse;font:400 13px/1.6 'Archivo',sans-serif;color:#33372F">
+<thead>
+<tr>
+<th style="text-align:left;padding:0 14px 10px 0;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Behaviour</th>
+<th style="text-align:left;padding:0 0 10px;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Heading reveal</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Each line of a heading rises from behind a mask on scroll into view, staggered 105ms per line.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Rule draw</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Section rules scale in horizontally from the left.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Link underline</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">A one-pixel underline wipes in from the left on hover.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Table row hover</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">The bottom border wipes in and the row takes a 2.6% tint.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Image hover</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">A slow 2.5% scale over 2.8 seconds.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Progress rail</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">A fixed bar at the bottom of the viewport showing the current section name and scroll progress.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Folio</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">A section counter fixed bottom-right that inverts its colour over dark sections. Hidden below 900px.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Masthead on hero</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">On the home page only, the wordmark and navigation swap to the light variant while a full-bleed image is behind them.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Mobile navigation</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Below 1180px the navigation collapses to a Menu / Close toggle that opens a full-width panel.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Reduced motion</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">All animation is suppressed under <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">prefers-reduced-motion</span>. Keep this.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div style="padding:22px 0 0;border-top:1px solid rgba(30,58,41,.3);margin-bottom:44px">
+<p style="margin:0 0 14px;font:500 10px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">04 — Still to be connected</p>
+<p style="margin:0 0 20px;max-width:62ch;font:400 15px/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">These items are outside the design and require your work.</p>
+
+<table style="width:100%;border-collapse:collapse;font:400 13px/1.6 'Archivo',sans-serif;color:#33372F">
+<thead>
+<tr>
+<th style="text-align:left;padding:0 14px 10px 0;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Item</th>
+<th style="text-align:left;padding:0 0 10px;border-bottom:1px solid rgba(30,58,41,.3);font:500 10px/1.6 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">What is needed</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Contact form</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">The form is styled but inert. Wire the submission, add spam protection and server-side validation, and confirm where submissions are delivered. Fields are name, organization, email, phone, subject and message.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Property listings</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Four active listings are hard-coded on the Propriétés and Properties pages, in both languages. Images and detail pages already point to the existing management application. Decide whether this table stays manual or is fed from that system.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">LinkedIn links</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Every footer LinkedIn link is a placeholder. The company page URL is required.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Language switch</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Every page carries a working FR / EN switch to its counterpart. Add <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">hreflang</span> tags and decide whether to redirect first-time visitors by browser language. French must remain the default.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Metadata</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Page titles and meta descriptions are written on all content pages, in both languages. The privacy and legal pages carry titles only. Open Graph tags, a share image, a favicon and a sitemap are still to be produced.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Analytics</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">None installed. Note that the privacy policy already commits to a cookie notice, so whatever is installed must be consistent with it.</td></tr>
+<tr><td style="padding:11px 14px 11px 0;border-bottom:1px solid rgba(30,58,41,.1);vertical-align:top">Hosting</td><td style="padding:11px 0;border-bottom:1px solid rgba(30,58,41,.1)">Domain, TLS certificate, redirects and a staging environment for review before launch.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div style="padding:22px 0 0;border-top:1px solid rgba(30,58,41,.3)">
+<p style="margin:0 0 14px;font:500 10px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">05 — Open before launch</p>
+<p style="margin:0 0 20px;max-width:62ch;font:400 15px/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">These items are the client’s responsibility and block go-live rather than development.</p>
+
+<div style="display:flex;flex-direction:column;gap:18px">
+<div style="padding:16px 0 0;border-top:1px solid rgba(30,58,41,.14);break-inside:avoid">
+<p style="margin:0 0 8px;font:500 15px/1.4 'Archivo',sans-serif;color:#141714">Team photography</p>
+<p style="margin:0;max-width:62ch;font:400 14px/1.7 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The seven team portraits on Cabinet and EN-Firm load from agencepanorama.ca. They must be brought into the new asset library before the old site is retired, or the profiles will break.</p>
+</div>
+<div style="padding:16px 0 0;border-top:1px solid rgba(30,58,41,.14);break-inside:avoid">
+<p style="margin:0 0 8px;font:500 15px/1.4 'Archivo',sans-serif;color:#141714">Testimonial approvals</p>
+<p style="margin:0;max-width:62ch;font:400 14px/1.7 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Four client testimonials appear on the home pages and one on the Indigenous real estate pages. Written approval from each organization should be on file before publication.</p>
+</div>
+<div style="padding:16px 0 0;border-top:1px solid rgba(30,58,41,.14);break-inside:avoid">
+<p style="margin:0 0 8px;font:500 15px/1.4 'Archivo',sans-serif;color:#141714">“Unique au Canada” / “Unique in Canada”</p>
+<p style="margin:0;max-width:62ch;font:400 14px/1.7 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The claim heads both firm pages. It rests on holding an authorized agency licence, a federal security clearance and a federal contract at the same time. Have counsel confirm the wording is defensible as stated.</p>
+</div>
+<div style="padding:16px 0 0;border-top:1px solid rgba(30,58,41,.14);break-inside:avoid">
+<p style="margin:0 0 8px;font:500 15px/1.4 'Archivo',sans-serif;color:#141714">Photography licences</p>
+<p style="margin:0;max-width:62ch;font:400 14px/1.7 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Two images carry iStock filenames and two are of unknown origin. All four need a licence confirmed in Panorama’s name for commercial web use.</p>
+</div>
+<div style="padding:16px 0 0;border-top:1px solid rgba(30,58,41,.14);break-inside:avoid">
+<p style="margin:0 0 8px;font:500 15px/1.4 'Archivo',sans-serif;color:#141714">Legal review</p>
+<p style="margin:0;max-width:62ch;font:400 14px/1.7 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The privacy policy and legal notices are drafted in both languages and have not been reviewed by counsel. Quebec’s Law 25 and OACIQ disclosure requirements both apply.</p>
+</div>
+<div style="padding:16px 0 0;border-top:1px solid rgba(30,58,41,.14);break-inside:avoid">
+<p style="margin:0 0 8px;font:500 15px/1.4 'Archivo',sans-serif;color:#141714">Credential verification</p>
+<p style="margin:0;max-width:62ch;font:400 14px/1.7 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Licence number H0531, the seven team titles and the English forms used for OACIQ designations should be checked against the register. Note that the French pages use “accréditée” and “habilités” as editorial wording where the OACIQ term of art is “autorisée”.</p>
+</div>
+</div>
+</div>
+
+<p style="margin:44px 0 0;padding-top:18px;border-top:1px solid rgba(30,58,41,.3);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">Les Services immobiliers Panorama Inc. — Real estate agency, OACIQ licence H0531</p>
+
+</div>
+
+</doc-page>
+
+</x-dc>
+</body>
+</html>

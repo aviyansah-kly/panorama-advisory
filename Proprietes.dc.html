@@ -9,7 +9,8 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Propriétés — Panorama</title>
+<title>Propriétés — Panorama | Inscriptions en cours</title>
+<meta name="description" content="Immeubles de bureaux, commerciaux, industriels et terrains actuellement inscrits chez Panorama, dont une disposition fédérale.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@ a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
 img{display:block}
 ::selection{background:#1E3A29;color:#FCFBF8}
-[data-mask]{display:block;overflow:hidden}
+[data-mask]{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 [data-mask]>span{display:block;transform:none;transition:transform 1.25s cubic-bezier(.16,.86,.2,1);will-change:transform}
 [data-mask].pre>span{transform:translateY(104%)}
 [data-r]{opacity:1;transition:opacity 1.5s cubic-bezier(.3,.7,.3,1)}
@@ -46,7 +47,7 @@ header{view-transition-name:masthead}
 </style>
 </helmet>
 
-<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;--wd:112;padding-bottom:42px">
+<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;padding-bottom:42px">
 
 <div data-folio aria-hidden="true"><b></b><i></i></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;background:#FCFBF8;border-bottom:1px solid rgba(30,58,41,.18)">
@@ -57,6 +58,7 @@ header{view-transition-name:masthead}
 <nav data-nav style="align-items:center;gap:30px;margin-left:auto">
 <a data-u href="./Conseil-et-gestion.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Conseil et gestion</a>
 <a data-u href="./Courtage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Courtage</a>
+<a data-u href="./Secteur-public.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Secteur public</a>
 <a data-u href="./Immobilier-autochtone.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Immobilier autochtone</a>
 <a data-u href="./Cabinet.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Cabinet</a>
 <a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Contact</a>
@@ -68,11 +70,12 @@ header{view-transition-name:masthead}
 
 <div style="{{ panelStyle }}">
 <div style="padding:90px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
-<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Conseil et gestion</a>
-<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Courtage</a>
-<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Immobilier autochtone</a>
-<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Cabinet</a>
-<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
+<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Conseil et gestion</a>
+<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Courtage</a>
+<a data-u onClick="{{ closeMenu }}" href="./Secteur-public.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Secteur public</a>
+<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Immobilier autochtone</a>
+<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Cabinet</a>
+<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Contact</a>
 <a data-u onClick="{{ closeMenu }}" href="./EN-Properties.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">English</a>
 </div>
 </div>
@@ -89,7 +92,7 @@ header{view-transition-name:masthead}
 <div style="padding:0 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
 <div data-cell style="grid-column:1/11">
 <p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Propriétés</p>
-<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.046em;color:#141714">
+<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(40px,7vw,112px);line-height:1;letter-spacing:-.056em;color:#141714">
 <span data-mask><span>Inscriptions</span></span>
 <span data-mask><span>en cours.</span></span>
 </h1>
@@ -103,7 +106,7 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="01 Inscriptions" style="background:#F3F0E9;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="01 Inscriptions" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
 <span data-r>01 — Inscriptions</span>
@@ -112,13 +115,13 @@ header{view-transition-name:masthead}
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px)">
 <div data-cell style="grid-column:1/8">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.06;letter-spacing:-.042em;color:#141714">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
 <span data-mask><span>Quatre immeubles</span></span>
 <span data-mask><span>actuellement inscrits.</span></span>
 </h2>
 </div>
 <div data-cell style="grid-column:9/13">
-<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Les inscriptions actives sont tenues à jour depuis l'application de gestion. Une ligne par immeuble; la fiche complète, les plans et les documents s'ouvrent au clic.</p>
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Les inscriptions actives sont tenues à jour depuis l’application de gestion. Une ligne par immeuble ; la fiche complète, les plans et les documents s’ouvrent au clic.</p>
 </div>
 </div>
 
@@ -133,13 +136,13 @@ header{view-transition-name:masthead}
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
 <img src="https://app.sync.quebec/storage/centris/12340261/ADDC89EDA4AD7E6DD97C74ED1C.jpeg" alt="5826, rue Richelieu" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
 <span style="display:flex;flex-direction:column;gap:10px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">5826, rue Richelieu</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">5826, rue Richelieu</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Lac-Mégantic — Terrain</span>
-<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Ancien manège militaire réhabilité en 2019, sols au critère B. Vente par le gouvernement du Canada.</span>
+<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Ancien manège militaire réhabilité en 2019, sols au critère B. Disposition pour le compte du gouvernement du Canada.</span>
 </span>
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">129 629 pi²</span>
 <span style="display:flex;flex-direction:column;gap:8px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">138 000 $</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">138 000 $</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">À vendre — plus TPS/TVQ</span>
 </span>
 </a>
@@ -148,13 +151,13 @@ header{view-transition-name:masthead}
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
 <img src="https://app.sync.quebec/storage/centris/28658749/ADDC89EDE96209BD19EC723D4F.jpeg" alt="266, rue Notre-Dame Ouest — 301-303" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
 <span style="display:flex;flex-direction:column;gap:10px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266, rue Notre-Dame Ouest — 301-303</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266, rue Notre-Dame Ouest — 301-303</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Montréal (Ville-Marie) — Bureaux, 3ᵉ étage</span>
 <span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Immeuble patrimonial de 1884, Vieux-Montréal. Fenestration sur trois côtés.</span>
 </span>
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">5 069 pi²</span>
 <span style="display:flex;flex-direction:column;gap:8px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">2 695 000 $</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">2 695 000 $</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">À vendre — plus TPS/TVQ</span>
 </span>
 </a>
@@ -163,13 +166,13 @@ header{view-transition-name:masthead}
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
 <img src="https://app.sync.quebec/storage/centris/28658749/ADDC89EDE96209AD19EC723D2B.jpeg" alt="266, rue Notre-Dame Ouest — 401-403" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
 <span style="display:flex;flex-direction:column;gap:10px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266, rue Notre-Dame Ouest — 401-403</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266, rue Notre-Dame Ouest — 401-403</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Montréal (Ville-Marie) — Bureaux, 4ᵉ étage</span>
-<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Trois lots au dernier étage, à quelques pas des métros Square-Victoria et Place-d'Armes.</span>
+<span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Trois lots au dernier étage, à quelques pas des métros Square-Victoria et Place-d’Armes.</span>
 </span>
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">5 153 pi²</span>
 <span style="display:flex;flex-direction:column;gap:8px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">2 850 000 $</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">2 850 000 $</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">À vendre — plus TPS/TVQ</span>
 </span>
 </a>
@@ -178,39 +181,39 @@ header{view-transition-name:masthead}
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
 <img src="https://app.sync.quebec/storage/centris/28658749/ADDC89EDE962090D19EC723D10.jpeg" alt="266, rue Notre-Dame Ouest — ensemble" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#E7E3DA">
 <span style="display:flex;flex-direction:column;gap:10px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266, rue Notre-Dame Ouest — ensemble</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">266, rue Notre-Dame Ouest — ensemble</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Montréal (Ville-Marie) — Bureaux, 3ᵉ et 4ᵉ étages</span>
 <span style="margin-top:4px;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Six lots sur deux étages, disponibles pour la première fois en 42 ans.</span>
 </span>
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">10 222 pi²</span>
 <span style="display:flex;flex-direction:column;gap:8px">
-<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">5 385 000 $</span>
+<span style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.03em;color:#141714">5 385 000 $</span>
 <span style="font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">À vendre — plus TPS/TVQ</span>
 </span>
 </a>
 
 </div>
 </div>
-</section><section data-screen-label="02 Confier un immeuble" style="background:#1E3A29;color:#FAF8F3;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
+</section><section data-screen-label="02 Confier un immeuble" style="background:#12241B;color:#F2EFE6;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:rgba(247,245,240,.34)"></div>
-<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,240,.62)">
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8FB39B">
 <span data-r>02 — Confier un immeuble</span>
 <span data-r>Courtage</span>
 </div>
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 <div data-cell style="grid-column:1/10">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.048em;color:#FAF8F3">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(34px,5.4vw,94px);line-height:1;letter-spacing:-.054em;color:#FAF8F3">
 <span data-mask><span>Une valeur démontrée</span></span>
 <span data-mask><span>avant la mise</span></span>
 <span data-mask><span>en marché.</span></span>
 </h2>
 </div>
 <div data-cell style="grid-column:10/13">
-<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:rgba(247,245,240,.7);text-wrap:pretty">Revenus, baux et potentiel de développement sont documentés en amont, pour que la négociation s'ouvre sur vos chiffres.</p>
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:rgba(247,245,240,.7);text-wrap:pretty">Revenus, baux et capacité de développement sont établis pendant que le dossier est encore privé, pour que la première offre réponde à vos chiffres plutôt qu’à une moyenne de comparables.</p>
 <div data-r style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:clamp(22px,2.6vw,40px);padding-top:22px;border-top:1px solid rgba(247,245,240,.24)">
 <a data-u href="./Courtage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">La division Courtage</a>
-<a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">Confier un mandat</a>
+<a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">Discuter d’un mandat</a>
 </div>
 </div>
 </div>
@@ -221,7 +224,7 @@ header{view-transition-name:masthead}
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
 <div data-cell style="grid-column:1/5">
 <img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:120px;height:15.8px;object-fit:contain;object-position:left center">
-<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Cabinet conseil en immobilier</p>
+<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Conseil stratégique en immobilier</p>
 </div>
 <div data-cell style="grid-column:6/8">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Nous joindre</p>
@@ -232,7 +235,7 @@ header{view-transition-name:masthead}
 </div>
 <div data-cell style="grid-column:8/11">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Bureau</p>
-<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>C.P. 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
+<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>Bureau 200, C.P. 1848<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
 </div>
 <div data-cell style="grid-column:11/13">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Liens</p>
@@ -247,7 +250,7 @@ header{view-transition-name:masthead}
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
 <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding-top:20px;border-top:1px solid rgba(30,58,41,.14);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
 <span>© 2026 Panorama</span>
-<span>Agence immobilière — Permis OACIQ H0531</span>
+<span>Permis OACIQ H0531</span>
 </div>
 </div>
 </footer>
@@ -255,12 +258,12 @@ header{view-transition-name:masthead}
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:100,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:94,&quot;min&quot;:80,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;}}">
 class Component extends DCLogic {
   state = { menu: false, rail: null };
 
   applyVars() {
-    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 112));
+    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 94));
   }
 
   setup = () => {

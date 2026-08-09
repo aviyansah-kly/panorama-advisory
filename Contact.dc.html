@@ -9,7 +9,8 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — Panorama</title>
+<title>Contact — Panorama | Conseil stratégique en immobilier, Kahnawà:ke</title>
+<meta name="description" content="Parlez à un conseiller : portefeuille, acquisition, disposition ou appel d’offres public. Kahnawà:ke, Québec. 514.289.8222.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@ a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
 img{display:block}
 ::selection{background:#1E3A29;color:#FCFBF8}
-[data-mask]{display:block;overflow:hidden}
+[data-mask]{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 [data-mask]>span{display:block;transform:none;transition:transform 1.25s cubic-bezier(.16,.86,.2,1);will-change:transform}
 [data-mask].pre>span{transform:translateY(104%)}
 [data-r]{opacity:1;transition:opacity 1.5s cubic-bezier(.3,.7,.3,1)}
@@ -52,7 +53,7 @@ header{view-transition-name:masthead}
 </style>
 </helmet>
 
-<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;--wd:112;padding-bottom:42px">
+<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;padding-bottom:42px">
 
 <div data-folio aria-hidden="true"><b></b><i></i></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;background:#FCFBF8;border-bottom:1px solid rgba(30,58,41,.18)">
@@ -63,6 +64,7 @@ header{view-transition-name:masthead}
 <nav data-nav style="align-items:center;gap:30px;margin-left:auto">
 <a data-u href="./Conseil-et-gestion.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Conseil et gestion</a>
 <a data-u href="./Courtage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Courtage</a>
+<a data-u href="./Secteur-public.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Secteur public</a>
 <a data-u href="./Immobilier-autochtone.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Immobilier autochtone</a>
 <a data-u href="./Cabinet.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Cabinet</a>
 <a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141714">Contact</a>
@@ -74,11 +76,12 @@ header{view-transition-name:masthead}
 
 <div style="{{ panelStyle }}">
 <div style="padding:90px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
-<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Conseil et gestion</a>
-<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Courtage</a>
-<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Immobilier autochtone</a>
-<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Cabinet</a>
-<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
+<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Conseil et gestion</a>
+<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Courtage</a>
+<a data-u onClick="{{ closeMenu }}" href="./Secteur-public.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Secteur public</a>
+<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Immobilier autochtone</a>
+<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Cabinet</a>
+<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#141714">Contact</a>
 <a data-u onClick="{{ closeMenu }}" href="./EN-Contact.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">English</a>
 </div>
 </div>
@@ -95,9 +98,9 @@ header{view-transition-name:masthead}
 <div style="padding:0 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
 <div data-cell style="grid-column:1/11">
 <p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Contact</p>
-<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.046em;color:#141714">
-<span data-mask><span>Parlons de</span></span>
-<span data-mask><span>votre projet.</span></span>
+<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(40px,7vw,112px);line-height:1;letter-spacing:-.056em;color:#141714">
+<span data-mask><span>Une décision immobilière</span></span>
+<span data-mask><span>à prendre ? Parlons-en.</span></span>
 </h1>
 </div>
 <div data-cell style="grid-column:11/13;padding-bottom:8px">
@@ -109,7 +112,7 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="01 Nous écrire" style="background:#F3F0E9;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="01 Nous écrire" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
 <span data-r>01 — Nous écrire</span>
@@ -118,7 +121,7 @@ header{view-transition-name:masthead}
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 
 <div data-cell style="grid-column:1/4">
-<p data-r style="margin:0;max-width:26ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">L'essentiel suffit. Nous répondrons avec une question précise plutôt qu'un accusé de réception.</p>
+<p data-r style="margin:0;max-width:26ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">L’essentiel suffit. Nous répondrons avec une question précise plutôt qu’un accusé de réception.</p>
 </div>
 
 <div data-cell style="grid-column:5/13">
@@ -145,10 +148,10 @@ header{view-transition-name:masthead}
 <label data-field style="display:flex;flex-direction:column;gap:10px;margin-top:clamp(26px,3.2vw,44px)">
 <span style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Objet de la demande</span>
 <select name="objet">
-<option>Courtage</option>
+<option>Appel d’offres ou approvisionnement</option>
 <option>Conseil et gestion</option>
 <option>Immobilier autochtone</option>
-<option>Appel d'offres ou approvisionnement</option>
+<option>Courtage</option>
 <option>Autre</option>
 </select>
 </label>
@@ -159,7 +162,7 @@ header{view-transition-name:masthead}
 </label>
 
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:clamp(36px,4.5vw,64px)">
-<button data-send type="submit" style="padding:17px 36px;border:1px solid #141714;background:#141714;color:#FCFBF8;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:0">Envoyer</button>
+<button data-send type="submit" style="padding:17px 36px;border:1px solid #141714;background:#141714;color:#FCFBF8;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:0">Parler à un conseiller</button>
 <p style="margin:0;font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">{{ formNote }}</p>
 </div>
 </form>
@@ -168,9 +171,9 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="02 Bureaux" style="background:#1E3A29;color:#FAF8F3;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="02 Bureaux" style="background:#12241B;color:#F2EFE6;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:rgba(247,245,240,.34)"></div>
-<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,240,.62)">
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8FB39B">
 <span data-r>02 — Bureaux</span>
 <span data-r>Territoire kanien'kehá:ka</span>
 </div>
@@ -178,21 +181,20 @@ header{view-transition-name:masthead}
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(48px,6vw,88px)">
 
 <div data-cell style="grid-column:1/8">
-<h2 style="margin:0 0 clamp(22px,2.6vw,40px);font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.048em;color:#FAF8F3">
-<span data-mask><span>Écrivez-nous</span></span>
-<span data-mask><span>ou passez nous voir.</span></span>
+<h2 style="margin:0 0 clamp(22px,2.6vw,40px);font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(34px,5.4vw,94px);line-height:1;letter-spacing:-.054em;color:#FAF8F3">
+<span data-mask><span>Passez</span></span>
+<span data-mask><span>nous voir.</span></span>
 </h2>
-<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:rgba(247,245,240,.72)">Business Complex<br>C.P. 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
 </div>
 
 <div data-cell style="grid-column:9/13">
 <div data-r style="border-top:1px solid rgba(247,245,240,.34)">
 <div style="padding:18px 0 22px;border-bottom:1px solid rgba(247,245,240,.14)">
-<p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,240,.62)">Téléphone</p>
-<a data-u data-num href="tel:+15142898222" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.03em;color:#FAF8F3">514.289.8222</a>
+<p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8FB39B">Téléphone</p>
+<a data-u data-num href="tel:+15142898222" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.03em;color:#FAF8F3">514.289.8222</a>
 </div>
 <div style="padding:18px 0 22px;border-bottom:1px solid rgba(247,245,240,.14)">
-<p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,240,.62)">Courriel</p>
+<p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8FB39B">Courriel</p>
 <a data-u href="mailto:kwe@panoramaadvisory.ca" style="font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#FAF8F3">kwe@panoramaadvisory.ca</a>
 </div>
 </div>
@@ -206,7 +208,7 @@ header{view-transition-name:masthead}
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
 <div data-cell style="grid-column:1/5">
 <img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:120px;height:15.8px;object-fit:contain;object-position:left center">
-<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Cabinet conseil en immobilier</p>
+<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Conseil stratégique en immobilier</p>
 </div>
 <div data-cell style="grid-column:6/8">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Divisions</p>
@@ -217,12 +219,13 @@ header{view-transition-name:masthead}
 </div>
 <div data-cell style="grid-column:8/11">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Bureau</p>
-<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>C.P. 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
+<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>Bureau 200, C.P. 1848<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
 </div>
 <div data-cell style="grid-column:11/13">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Liens</p>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
 <a data-u href="./Accueil.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Accueil</a>
+<a data-u href="./Proprietes.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Propriétés</a>
 <a data-u href="#" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">LinkedIn</a>
 <a data-u href="./Confidentialite.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Confidentialité</a>
 <a data-u href="./Mentions-legales.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Mentions légales</a>
@@ -232,7 +235,7 @@ header{view-transition-name:masthead}
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
 <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding-top:20px;border-top:1px solid rgba(30,58,41,.14);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
 <span>© 2026 Panorama</span>
-<span>Agence immobilière — Permis OACIQ H0531</span>
+<span>Permis OACIQ H0531</span>
 </div>
 </div>
 </footer>
@@ -240,12 +243,12 @@ header{view-transition-name:masthead}
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:100,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:94,&quot;min&quot;:80,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;}}">
 class Component extends DCLogic {
-  state = { menu: false, sent: false, sending: false, error: false };
+  state = { menu: false, sent: false };
 
   applyVars() {
-    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 112));
+    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 94));
   }
 
   setup = () => {
@@ -378,29 +381,10 @@ class Component extends DCLogic {
       railLabel: (this.state.rail && this.state.rail.label) || '',
       railCount: this.state.rail ? this.state.rail.i + ' / ' + this.state.rail.n : '',
       railProgress: ((this.state.rail ? this.state.rail.p : 0) * 100).toFixed(2) + '%',
-      onSubmit: (e) => {
-        e.preventDefault();
-        if (this.state.sending || this.state.sent) return;
-        this.setState({ sending: true, error: false });
-        const form = e.target;
-        const data = new FormData(form);
-        data.append('access_key', '449f5183-b9d1-4786-ad72-ed2114d5f01d');
-        data.append('subject', 'Nouveau message — panoramaadvisory.ca');
-        fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-          .then((r) => r.json())
-          .then((res) => {
-            if (res.success) { this.setState({ sent: true, sending: false }); form.reset(); }
-            else { this.setState({ error: true, sending: false }); }
-          })
-          .catch(() => this.setState({ error: true, sending: false }));
-      },
-      formNote: this.state.sending
-        ? 'Envoi en cours…'
-        : this.state.sent
-        ? 'Message envoyé — merci, nous vous répondrons rapidement.'
-        : this.state.error
-        ? 'Une erreur est survenue — merci d’écrire à kwe@panoramaadvisory.ca'
-        : '',
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      formNote: this.state.sent
+        ? 'Message consigné — maquette, aucun envoi'
+        : 'Formulaire de maquette — à brancher',
       panelStyle: [
         'position:fixed', 'top:0', 'left:0', 'right:0', 'z-index:75',
         'background:#FCFBF8', 'border-bottom:1px solid rgba(30,58,41,.22)', 'overflow:hidden',

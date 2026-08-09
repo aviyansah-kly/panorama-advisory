@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
 img{display:block}
 ::selection{background:#1E3A29;color:#FCFBF8}
-[data-mask]{display:block;overflow:hidden}
+[data-mask]{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 [data-mask]>span{display:block;transform:none;transition:transform 1.25s cubic-bezier(.16,.86,.2,1);will-change:transform}
 [data-mask].pre>span{transform:translateY(104%)}
 [data-r]{opacity:1;transition:opacity 1.5s cubic-bezier(.3,.7,.3,1)}
@@ -52,7 +52,7 @@ header{view-transition-name:masthead}
 </style>
 </helmet>
 
-<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;--wd:112;padding-bottom:42px">
+<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;padding-bottom:42px">
 
 <div data-folio aria-hidden="true"><b></b><i></i></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;background:#FCFBF8;border-bottom:1px solid rgba(30,58,41,.18)">
@@ -63,6 +63,7 @@ header{view-transition-name:masthead}
 <nav data-nav style="align-items:center;gap:30px;margin-left:auto">
 <a data-u href="./EN-Advisory-and-management.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Advisory and management</a>
 <a data-u href="./EN-Brokerage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Brokerage</a>
+<a data-u href="./EN-Public-sector.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Public sector</a>
 <a data-u href="./EN-Indigenous-real-estate.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Indigenous real estate</a>
 <a data-u href="./EN-Firm.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Firm</a>
 <a data-u href="./EN-Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Contact</a>
@@ -74,11 +75,12 @@ header{view-transition-name:masthead}
 
 <div style="{{ panelStyle }}">
 <div style="padding:90px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
-<a data-u onClick="{{ closeMenu }}" href="./EN-Advisory-and-management.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Advisory and management</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Brokerage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Brokerage</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Indigenous-real-estate.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Indigenous real estate</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Firm.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Firm</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Advisory-and-management.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Advisory and management</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Brokerage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Brokerage</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Public-sector.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Public sector</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Indigenous-real-estate.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Indigenous real estate</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Firm.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Firm</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Contact</a>
 <a data-u onClick="{{ closeMenu }}" href="./Confidentialite.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">Français</a>
 </div>
 </div>
@@ -95,7 +97,7 @@ header{view-transition-name:masthead}
 <div style="padding:0 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
 <div data-cell style="grid-column:1/10">
 <p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Privacy</p>
-<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.046em;color:#141714">
+<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(40px,7vw,112px);line-height:1;letter-spacing:-.056em;color:#141714">
 <span data-mask><span>Protection of</span></span>
 <span data-mask><span>personal</span></span>
 <span data-mask><span>information.</span></span>
@@ -107,7 +109,7 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="01 Privacy officer" style="background:#F3F0E9;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="01 Privacy officer" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
 <span data-r>01 — Privacy officer</span>
@@ -115,7 +117,7 @@ header{view-transition-name:masthead}
 </div>
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 <div data-cell style="grid-column:1/7">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.06;letter-spacing:-.042em;color:#141714">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
 <span data-mask><span>One person</span></span>
 <span data-mask><span>answers for it.</span></span>
 </h2>
@@ -140,47 +142,47 @@ header{view-transition-name:masthead}
 <div data-r style="border-top:1px solid rgba(30,58,41,.28)">
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">What we collect</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">What we collect</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The information you send us: name, company, email, phone and the content of your request. The information required to carry out a mandate: title documents, leases, building financial statements, identification where the law requires it. The technical data generated by a visit to the site: IP address, browser, pages viewed.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Why</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Why</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">To respond to a request. To carry out a mandate and account for it. To meet our legal and regulatory obligations, in particular those of the Organisme d’autoréglementation du courtage immobilier du Québec and those relating to anti-money laundering. To improve the site. We collect nothing that does not serve one of these purposes.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Consent</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Consent</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">By sending us your information, you consent to its use for the purposes above. You may withdraw that consent at any time, except where retention is imposed on us by law or by OACIQ rules.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Disclosure to third parties</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Disclosure to third parties</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">We do not sell or rent personal information. We disclose it only to the parties required to carry out your mandate — notaries, appraisers, surveyors, financial institutions — with your authorization; to our technology suppliers, who are bound by confidentiality undertakings; and to the authorities where the law requires it.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">05</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Hosting outside Quebec</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Hosting outside Quebec</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Some of our suppliers may host data outside Quebec. In that case we carry out the privacy impact assessment provided for by law before any disclosure.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">06</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Retention</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Retention</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Brokerage records are kept for the periods imposed by OACIQ regulations. Other information is destroyed once the purpose for which it was collected has been met.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">07</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Your rights</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Your rights</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">You have the right to access your information, to have it corrected, to request its deletion, to withdraw your consent, to receive in a structured technological format the information you provided to us, and to file a complaint with the Commission d’accès à l’information du Québec. We respond within thirty days.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">08</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Cookies</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Cookies</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The site uses cookies necessary to its operation and audience measurement cookies. You can refuse them in your browser settings; certain functions of the site may then stop working.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">09</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Privacy incident</h3>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Privacy incident</h3>
 <p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">In the event of an incident presenting a risk of serious injury, we notify the persons concerned as well as the Commission d’accès à l’information, and we record the incident in the register provided for by law.</p>
 </div>
 </div>
@@ -192,7 +194,7 @@ header{view-transition-name:masthead}
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
 <div data-cell style="grid-column:1/5">
 <img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:120px;height:15.8px;object-fit:contain;object-position:left center">
-<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Real estate advisory firm</p>
+<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Strategic real estate advisory</p>
 </div>
 <div data-cell style="grid-column:6/8">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Divisions</p>
@@ -203,14 +205,14 @@ header{view-transition-name:masthead}
 </div>
 <div data-cell style="grid-column:8/11">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Office</p>
-<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>P.O. Box 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
+<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>Suite 200, P.O. Box 1848<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
 </div>
 <div data-cell style="grid-column:11/13">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Links</p>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
 <a data-u href="./EN-Home.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Home</a>
+<a data-u href="./EN-Properties.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Properties</a>
 <a data-u href="#" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">LinkedIn</a>
-<a data-u href="./EN-Privacy.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Privacy</a>
 <a data-u href="./EN-Legal-notice.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Legal notices</a>
 </div>
 </div>
@@ -218,7 +220,7 @@ header{view-transition-name:masthead}
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
 <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding-top:20px;border-top:1px solid rgba(30,58,41,.14);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
 <span>© 2026 Panorama</span>
-<span>Real estate agency — OACIQ licence H0531</span>
+<span>OACIQ licence H0531</span>
 </div>
 </div>
 </footer>
@@ -226,12 +228,12 @@ header{view-transition-name:masthead}
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:100,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:94,&quot;min&quot;:80,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
 class Component extends DCLogic {
   state = { menu: false, sent: false };
 
   applyVars() {
-    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 112));
+    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 94));
   }
 
   setup = () => {

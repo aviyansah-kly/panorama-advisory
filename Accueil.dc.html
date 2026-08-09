@@ -9,7 +9,8 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panorama — cabinet-conseil immobilier</title>
+<title>Panorama — Conseil stratégique en immobilier | Gouvernements, Premières Nations, institutions</title>
+<meta name="description" content="Cabinet autochtone de conseil stratégique en immobilier commercial, industriel et institutionnel. Stratégie de portefeuille, acquisition, disposition et courtage. Kahnawà:ke, Québec.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@ a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
 img{display:block}
 ::selection{background:#1E3A29;color:#FCFBF8}
-[data-mask]{display:block;overflow:hidden}
+[data-mask]{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 [data-mask]>span{display:block;transform:none;transition:transform 1.25s cubic-bezier(.16,.86,.2,1);will-change:transform}
 [data-mask].pre>span{transform:translateY(104%)}
 [data-r]{opacity:1;transition:opacity 1.5s cubic-bezier(.3,.7,.3,1)}
@@ -49,11 +50,12 @@ header{view-transition-name:masthead}
 @media (max-width:900px){[data-folio]{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}[data-mask]>span{transform:none!important}[data-r]{opacity:1!important}[data-rule]{transform:none!important}}
 @media (max-width:1180px){[data-nav]{display:none!important}[data-menu]{display:block!important}}
+@media (max-width:1180px){[data-quad]{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media (max-width:900px){[data-cell]{grid-column:1/-1!important}[data-tri]{grid-template-columns:minmax(0,1fr)!important;row-gap:34px!important}[data-reg]{grid-template-columns:44px minmax(0,1fr)!important}[data-reg]>[data-regtitle]{grid-column:2}[data-reg]>*:last-child{grid-column:2}[data-defs]>p{flex-direction:column!important;gap:2px!important}[data-defs]>p>span:first-child{width:auto!important}}
 </style>
 </helmet>
 
-<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;--wd:112;padding-bottom:42px">
+<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;padding-bottom:42px">
 
 <div data-folio aria-hidden="true"><b></b><i></i></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;--u:{{ ruleHover }}">
@@ -66,6 +68,7 @@ header{view-transition-name:masthead}
 <nav data-nav style="align-items:center;gap:30px;margin-left:auto;color:{{ ink }};transition:color .8s ease">
 <a data-u href="./Conseil-et-gestion.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase">Conseil et gestion</a>
 <a data-u href="./Courtage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase">Courtage</a>
+<a data-u href="./Secteur-public.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase">Secteur public</a>
 <a data-u href="./Immobilier-autochtone.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase">Immobilier autochtone</a>
 <a data-u href="./Cabinet.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase">Cabinet</a>
 <a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase">Contact</a>
@@ -77,11 +80,12 @@ header{view-transition-name:masthead}
 
 <div style="{{ panelStyle }}">
 <div style="padding:96px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
-<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Conseil et gestion</a>
-<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Courtage</a>
-<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Immobilier autochtone</a>
-<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Cabinet</a>
-<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
+<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em">Conseil et gestion</a>
+<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em">Courtage</a>
+<a data-u onClick="{{ closeMenu }}" href="./Secteur-public.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em">Secteur public</a>
+<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em">Immobilier autochtone</a>
+<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em">Cabinet</a>
+<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
 <a data-u onClick="{{ closeMenu }}" href="./EN-Home.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">English</a>
 </div>
 </div>
@@ -99,11 +103,16 @@ header{view-transition-name:masthead}
 <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
 
 <div data-cell style="grid-column:1/10">
-<p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Cabinet conseil en immobilier — Kahnawà:ke, Québec</p>
-<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(40px,7vw,108px);line-height:.9;letter-spacing:-.052em;color:#141714">
+<p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Conseil stratégique en immobilier</p>
+<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(46px,8.2vw,136px);line-height:.94;letter-spacing:-.058em;color:#141714">
 <span data-mask><span>Au-delà</span></span>
 <span data-mask><span>de la transaction.</span></span>
 </h1>
+<p data-r style="margin:clamp(28px,3.2vw,46px) 0 0;max-width:54ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Panorama conseille des entreprises privées et publiques, des organisations autochtones, des institutions et des gouvernements. Analyse, stratégie de portefeuille et exécution.</p>
+<div data-r style="display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 32px;margin-top:clamp(24px,2.6vw,36px)">
+<a data-u href="./Conseil-et-gestion.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">Nos services conseil</a>
+<a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Parler à un conseiller</a>
+</div>
 </div>
 
 </div>
@@ -112,77 +121,78 @@ header{view-transition-name:masthead}
 <div style="padding:clamp(38px,4.4vw,70px) 0 0">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 </div>
+
+<div style="padding:20px 40px clamp(30px,3.4vw,48px)">
+<p data-r style="margin:0 0 clamp(24px,2.6vw,36px);font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Attestations détenues</p>
+<div data-tri style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:26px">
+<div data-r style="padding-top:18px;border-top:1px solid rgba(30,58,41,.28)">
+<p style="margin:0 0 12px;font:400 11px/1.6 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</p>
+<p style="margin:0;max-width:32ch;font:400 clamp(15px,1.1vw,16px)/1.6 'Archivo',sans-serif;color:#141714;text-wrap:pretty">Mandataire du gouvernement du Canada au Québec pour la disposition de biens immobiliers fédéraux.</p>
+</div>
+<div data-r style="padding-top:18px;border-top:1px solid rgba(30,58,41,.28)">
+<p style="margin:0 0 12px;font:400 11px/1.6 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</p>
+<p style="margin:0;max-width:32ch;font:400 clamp(15px,1.1vw,16px)/1.6 'Archivo',sans-serif;color:#141714;text-wrap:pretty">Attestation de sécurité de Services publics et Approvisionnement Canada.</p>
+</div>
+<div data-r style="padding-top:18px;border-top:1px solid rgba(30,58,41,.28)">
+<p style="margin:0 0 12px;font:400 11px/1.6 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</p>
+<p style="margin:0;max-width:32ch;font:400 clamp(15px,1.1vw,16px)/1.6 'Archivo',sans-serif;color:#141714;text-wrap:pretty">Certifiée entreprise autochtone par le CCAB, inscrite au Répertoire des entreprises autochtones et admissible aux marchés réservés fédéraux.</p>
+</div>
+</div>
+<div data-r style="margin-top:clamp(24px,2.6vw,34px)">
+<a data-u href="./Secteur-public.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">Gouvernements et secteur public</a>
+</div>
+</div>
 </section>
 
 <section data-screen-label="01 Mandat" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
 <span data-r>01 — Mandat</span>
-<span data-r style="color:#4E5349">Quatre clientèles</span>
+<span data-r style="color:#4E5349">Trois clientèles</span>
 </div>
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 
 <div data-cell style="grid-column:2/12">
-<h2 style="margin:0 0 clamp(22px,2.6vw,40px);font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.048em;color:#141714">
+<h2 style="margin:0 0 clamp(22px,2.6vw,40px);font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(34px,5.4vw,94px);line-height:1;letter-spacing:-.054em;color:#141714">
 <span data-mask><span>Conseil, gestion</span></span>
 <span data-mask><span>et courtage immobiliers.</span></span>
 </h2>
-<p data-r style="margin:0;max-width:56ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Une entreprise qui signe un bail de dix ans, un organisme qui achète son premier immeuble, une institution qui gère un portefeuille multisite, une communauté qui planifie son territoire : la décision est de même nature, les contraintes ne le sont pas. Nous les documentons avant de recommander quoi que ce soit.</p>
+<p data-r style="margin:0;max-width:56ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Un ministère qui rationalise un portefeuille. Une Première Nation qui structure la propriété d’un développement. Une institution qui gère une occupation multisite. Une entreprise qui signe un bail de dix ans. La décision est de même nature. Les contraintes ne le sont pas. Nous les documentons avant de recommander quoi que ce soit.</p>
 </div>
 
 </div>
 
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
-<div data-tri style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);border-top:1px solid rgba(30,58,41,.28)">
+<div data-tri style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);border-top:1px solid rgba(30,58,41,.28)">
 <div data-row style="padding:22px 8px 26px 0;border-bottom:1px solid rgba(30,58,41,.14)">
 <p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;color:#4E5349">01</p>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">Secteur privé</p>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">Entreprises privées et publiques</p>
 </div>
 <div data-row style="padding:22px 8px 26px 0;border-bottom:1px solid rgba(30,58,41,.14)">
 <p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;color:#4E5349">02</p>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">Secteur public</p>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">Organisations autochtones</p>
 </div>
 <div data-row style="padding:22px 8px 26px 0;border-bottom:1px solid rgba(30,58,41,.14)">
 <p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;color:#4E5349">03</p>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">Secteur communautaire</p>
-</div>
-<div data-row style="padding:22px 8px 26px 0;border-bottom:1px solid rgba(30,58,41,.14)">
-<p style="margin:0 0 10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;color:#4E5349">04</p>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">Nations autochtones</p>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">Institutions et gouvernements</p>
 </div>
 </div>
 </div>
 </section>
 
-<section data-screen-label="02 Territoire" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="02 Deux divisions" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>02 — Territoire</span>
-<span data-r style="color:#4E5349">Gaspésie</span>
-</div>
-<div style="height:clamp(32px,3.8vw,58px)"></div>
-<div data-r data-fig style="width:100%;height:clamp(340px,70vh,720px);overflow:hidden;background:#EDEBE5">
-<img src="./uploads/IL-Gaspesie-1.jpg" alt="Gespe'gewa'gi, Gaspésie" style="width:100%;height:100%;object-fit:cover;object-position:center 52%;filter:saturate(.82) contrast(1.05)">
-</div>
-<div style="padding:16px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">
-<span data-r>Gespe'gewa'gi</span>
-<span data-r>Territoire mi'gmaq</span>
-</div>
-</section>
-
-<section data-screen-label="03 Deux divisions" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
-<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
-<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>03 — Deux divisions</span>
+<span data-r>02 — Deux divisions</span>
 <span data-r style="color:#4E5349">02</span>
 </div>
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(56px,6.5vw,104px)">
 
 <div data-cell style="grid-column:1/7;display:flex;flex-direction:column">
-<a data-u href="./Conseil-et-gestion.dc.html" style="align-self:flex-start;margin:0 0 clamp(26px,3vw,44px);min-height:2.08em;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.04;letter-spacing:-.044em;color:#141714;white-space:normal">Conseil<br>et gestion</a>
-<p data-r style="margin:0 0 clamp(30px,3.6vw,52px);min-height:3.32em;max-width:40ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Analyse, planification et gestion d'actifs pour propriétaires et occupants.</p>
+<a data-u href="./Conseil-et-gestion.dc.html" style="align-self:flex-start;margin:0 0 clamp(26px,3vw,44px);min-height:2.08em;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(26px,3.2vw,55px);line-height:1.04;letter-spacing:-.044em;color:#141714;white-space:normal">Conseil<br>et gestion</a>
+<p data-r style="margin:0 0 clamp(30px,3.6vw,52px);min-height:3.32em;max-width:40ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Analyse, planification et gestion d’actifs pour les organisations qui détiennent ou occupent leurs espaces.</p>
 <div data-r style="border-top:1px solid rgba(30,58,41,.22)">
 <p data-row style="margin:0;padding:13px 8px 14px 0;border-bottom:1px solid rgba(30,58,41,.11);display:flex;gap:20px;font:400 16px/1.66 'Archivo',sans-serif;color:#141714"><span style="flex:none;font:400 11px/1.6 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>Stratégie et portefeuille</p>
 <p data-row style="margin:0;padding:13px 8px 14px 0;border-bottom:1px solid rgba(30,58,41,.11);display:flex;gap:20px;font:400 16px/1.66 'Archivo',sans-serif;color:#141714"><span style="flex:none;font:400 11px/1.6 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>Transaction et disposition</p>
@@ -192,8 +202,8 @@ header{view-transition-name:masthead}
 </div>
 
 <div data-cell style="grid-column:8/13;display:flex;flex-direction:column">
-<a data-u href="./Courtage.dc.html" style="align-self:flex-start;margin:0 0 clamp(26px,3vw,44px);min-height:2.08em;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.04;letter-spacing:-.044em;color:#141714;white-space:normal">Courtage</a>
-<p data-r style="margin:0 0 clamp(30px,3.6vw,52px);min-height:3.32em;max-width:40ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Location, vente et acquisition d'immeubles commerciaux, industriels et institutionnels.</p>
+<a data-u href="./Courtage.dc.html" style="align-self:flex-start;margin:0 0 clamp(26px,3vw,44px);min-height:2.08em;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(26px,3.2vw,55px);line-height:1.04;letter-spacing:-.044em;color:#141714;white-space:normal">Courtage</a>
+<p data-r style="margin:0 0 clamp(30px,3.6vw,52px);min-height:3.32em;max-width:40ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Location, vente et acquisition d’immeubles commerciaux, industriels et institutionnels.</p>
 <div data-r style="border-top:1px solid rgba(30,58,41,.22)">
 <p data-row style="margin:0;padding:13px 8px 14px 0;border-bottom:1px solid rgba(30,58,41,.11);display:flex;gap:20px;font:400 16px/1.66 'Archivo',sans-serif;color:#141714"><span style="flex:none;font:400 11px/1.6 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>Location</p>
 <p data-row style="margin:0;padding:13px 8px 14px 0;border-bottom:1px solid rgba(30,58,41,.11);display:flex;gap:20px;font:400 16px/1.66 'Archivo',sans-serif;color:#141714"><span style="flex:none;font:400 11px/1.6 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>Vente</p>
@@ -212,16 +222,16 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="04 Approche" style="background:#F3F0E9;padding:0 0 clamp(66px,7.6vw,116px);--rh:rgba(30,58,41,.045)">
+<section data-screen-label="03 Approche" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px);--rh:rgba(30,58,41,.045)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>04 — Approche</span>
-<span data-r style="color:#4E5349">03</span>
+<span data-r>03 — Approche</span>
+<span data-r style="color:#4E5349">04</span>
 </div>
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px)">
 <div data-cell style="grid-column:2/12">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.048em;color:#141714">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(34px,5.4vw,94px);line-height:1;letter-spacing:-.054em;color:#141714">
 <span data-mask><span>Documenter, chiffrer,</span></span>
 <span data-mask><span>recommander.</span></span>
 </h2>
@@ -229,101 +239,41 @@ header{view-transition-name:masthead}
 </div>
 
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
-<div data-tri style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px)">
+<div data-tri data-quad style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:34px">
 <div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">01 — Documenter</p>
-<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Occupation réelle, baux en vigueur, frais d'exploitation, contraintes réglementaires. Les chiffres sont établis avant toute recommandation.</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Occupation réelle, baux en vigueur, frais d’exploitation, contraintes réglementaires. Tout est établi avant la moindre recommandation.</p>
 </div>
 <div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">02 — Chiffrer</p>
-<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Chaque scénario est comparé aux autres sur le coût, le risque et la marge de manœuvre qu'il laisse à l'organisation.</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Chaque scénario est mesuré sur le coût, sur le risque et sur la marge de manœuvre qu’il laisse.</p>
 </div>
 <div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">03 — Recommander</p>
-<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Une orientation signée, avec ce qu'elle implique et ce qu'elle exclut. C'est sur cette base que la transaction se négocie.</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Une orientation signée, avec ce qu’elle implique et ce qu’elle exclut. C’est sur cette base que la transaction se négocie.</p>
+</div>
+<div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">04 — Exécuter</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Nous menons ce qui a été recommandé, ou nous encadrons ceux qui le mènent.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section data-screen-label="05 Cabinet" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="04 Témoignages" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>05 — Cabinet</span>
-<a data-r data-u href="./Cabinet.dc.html" style="color:#4E5349">Voir le cabinet</a>
-</div>
-
-<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px)">
-<div data-cell style="grid-column:1/10">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.048em;color:#141714">
-<span data-mask><span>Une relation humaine</span></span>
-<span data-mask><span>avant tout.</span></span>
-</h2>
-</div>
-<div data-cell style="grid-column:10/13">
-<div data-r data-fig style="position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#EDEBE5">
-<image-slot id="acc-relation" shape="rect" src="./uploads/acc-relation.jpg" placeholder="Deux personnes en conversation, de dos ou de trois quarts, bureau réel, lumière naturelle. Visages peu lisibles." style="width:100%;height:100%"></image-slot>
-</div>
-</div>
-</div>
-
-<div style="padding:clamp(38px,4.4vw,70px) 40px 0">
-<div data-r style="border-top:1px solid rgba(30,58,41,.28)">
-<a data-row data-reg href="./Cabinet.dc.html" style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(18px,2vw,26px) 8px clamp(20px,2.2vw,28px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<span data-regtitle style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.032em;color:#141714">Benoit Loyer</span>
-<span style="font:400 13px/1.7 'Archivo',sans-serif;letter-spacing:.01em;color:#4E5349">Président, courtier immobilier agréé</span>
-</a>
-<a data-row data-reg href="./Cabinet.dc.html" style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(18px,2vw,26px) 8px clamp(20px,2.2vw,28px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<span data-regtitle style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.032em;color:#141714">Julia Cloutier, MBA</span>
-<span style="font:400 13px/1.7 'Archivo',sans-serif;letter-spacing:.01em;color:#4E5349">Vice-présidente, conseil et gestion</span>
-</a>
-<a data-row data-reg href="./Cabinet.dc.html" style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(18px,2vw,26px) 8px clamp(20px,2.2vw,28px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<span data-regtitle style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.032em;color:#141714">Susan Levinger</span>
-<span style="font:400 13px/1.7 'Archivo',sans-serif;letter-spacing:.01em;color:#4E5349">Vice-présidente, courtier immobilier commercial</span>
-</a>
-<a data-row data-reg href="./Cabinet.dc.html" style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(18px,2vw,26px) 8px clamp(20px,2.2vw,28px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
-<span data-regtitle style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.032em;color:#141714">Benoit Lacoste</span>
-<span style="font:400 13px/1.7 'Archivo',sans-serif;letter-spacing:.01em;color:#4E5349">Vice-président, courtier immobilier commercial</span>
-</a>
-<a data-row data-reg href="./Cabinet.dc.html" style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(18px,2vw,26px) 8px clamp(20px,2.2vw,28px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">05</span>
-<span data-regtitle style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.032em;color:#141714">Kahsennenhawe Sky-Deer</span>
-<span style="font:400 13px/1.7 'Archivo',sans-serif;letter-spacing:.01em;color:#4E5349">Vice-présidente, relations et services corporatifs</span>
-</a>
-<a data-row data-reg href="./Cabinet.dc.html" style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(18px,2vw,26px) 8px clamp(20px,2.2vw,28px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">06</span>
-<span data-regtitle style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.032em;color:#141714">Carla Brown</span>
-<span style="font:400 13px/1.7 'Archivo',sans-serif;letter-spacing:.01em;color:#4E5349">Directrice de mise en marché, courtier immobilier</span>
-</a>
-<a data-row data-reg href="./Cabinet.dc.html" style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(18px,2vw,26px) 8px clamp(20px,2.2vw,28px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">07</span>
-<span data-regtitle style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.032em;color:#141714">Nadezhda Bundova</span>
-<span style="font:400 13px/1.7 'Archivo',sans-serif;letter-spacing:.01em;color:#4E5349">Directrice, conformité des opérations immobilières</span>
-</a>
-</div>
-</div>
-</section>
-
-<section data-screen-label="06 Témoignages" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
-<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
-<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>06 — Témoignages</span>
+<span data-r>04 — Témoignages</span>
 <span data-r style="color:#4E5349">04</span>
 </div>
 
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px)">
 <div data-cell style="grid-column:2/12">
-<blockquote style="margin:0 0 clamp(22px,2.6vw,40px);font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.1;letter-spacing:-.042em;color:#141714">
-<span data-mask><span>« Nous avions de grandes ambitions</span></span>
-<span data-mask><span>pour mieux servir notre clientèle.</span></span>
-<span data-mask><span>Panorama a transformé cette</span></span>
-<span data-mask><span>vision en réalité. »</span></span>
+<blockquote style="margin:0 0 clamp(22px,2.6vw,40px);font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(26px,3.2vw,55px);line-height:1.1;letter-spacing:-.042em;color:#141714">
+<span data-mask><span>« Plusieurs dossiers avec Panorama,</span></span>
+<span data-mask><span>et les livrables ont toujours été à la hauteur. »</span></span>
 </blockquote>
-<p data-r style="margin:0;font:500 11px/1.8 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Ellen Filippelli — Directrice générale<br>Centre de justice des Premiers Peuples de Tiohtià:ke</p>
+<p data-r style="margin:0;font:500 11px/1.8 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">Richard Speer, président<br>Attraction</p>
 </div>
 </div>
 
@@ -332,17 +282,17 @@ header{view-transition-name:masthead}
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,4fr);gap:clamp(16px,2.2vw,36px);padding:clamp(20px,2.4vw,30px) 8px clamp(22px,2.6vw,32px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
 <span data-regtitle style="font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Marie-Vincent</span>
-<span style="font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Panorama a joué un rôle déterminant dans la vente de notre immeuble. Un professionnalisme constant, du premier appel jusqu'à la signature.</span>
+<span style="font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Panorama a joué un rôle déterminant dans la vente de notre immeuble. Un professionnalisme constant, du premier appel jusqu’à la signature.</span>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,4fr);gap:clamp(16px,2.2vw,36px);padding:clamp(20px,2.4vw,30px) 8px clamp(22px,2.6vw,32px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
 <span data-regtitle style="font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Pharmabio</span>
-<span style="font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Panorama nous a accompagnés dans la relocalisation de nos bureaux et la négociation de notre bail. L'équipe a dépassé nos attentes.</span>
+<span style="font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Panorama nous a accompagnés dans la relocalisation de nos bureaux et la négociation de notre bail. L’équipe a dépassé nos attentes.</span>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,4fr);gap:clamp(16px,2.2vw,36px);padding:clamp(20px,2.4vw,30px) 8px clamp(22px,2.6vw,32px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
 <span data-regtitle style="font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4E5349">Transport Lyon</span>
-<span style="font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Panorama m'aide à trouver des solutions gagnantes depuis près de dix ans. Ce sont mes conseillers de confiance.</span>
+<span style="font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Panorama m’aide à trouver des solutions gagnantes depuis près de dix ans. Ce sont mes conseillers de confiance.</span>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,4fr);gap:clamp(16px,2.2vw,36px);padding:clamp(20px,2.4vw,30px) 8px clamp(22px,2.6vw,32px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
@@ -353,36 +303,56 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="07 Position" style="background:var(--slab,#1E3A29);color:#FAF8F3;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);--rh:rgba(250,248,243,.05);min-height:78vh;display:flex;flex-direction:column">
+<section data-screen-label="05 Territoire" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
+<span data-r>05 — Territoire</span>
+<span data-r style="color:#4E5349">Gaspésie</span>
+</div>
+<div style="height:clamp(32px,3.8vw,58px)"></div>
+<div data-r data-fig style="width:100%;height:clamp(340px,70vh,720px);overflow:hidden;background:#EDEBE5">
+<img src="./uploads/IL-Gaspesie-1.jpg" alt="Gespe'gewa'gi, Gaspésie" style="width:100%;height:100%;object-fit:cover;object-position:center 52%;filter:saturate(.82) contrast(1.05)">
+</div>
+<div style="padding:16px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">
+<span data-r>Gespe'gewa'gi</span>
+<span data-r>Territoire mi'gmaq</span>
+</div>
+</section>
+
+<section data-screen-label="06 Position" style="background:var(--slab,#1E3A29);color:#FAF8F3;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);--rh:rgba(250,248,243,.05);min-height:78vh;display:flex;flex-direction:column">
 <div data-rule style="height:1px;background:rgba(247,245,240,.34)"></div>
-<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,240,.62)">
-<span data-r>07 — Position</span>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8FB39B">
+<span data-r>06 — Position</span>
 <span data-r>Kahnawà:ke</span>
 </div>
 
 <div style="flex:1;display:flex;align-items:center;padding:clamp(70px,9vw,140px) 40px">
-<h2 style="margin:0;max-width:22ch;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(40px,7vw,108px);line-height:.94;letter-spacing:-.05em;color:#FAF8F3">
-<span data-mask><span>Le conseil</span></span>
-<span data-mask><span>avant la</span></span>
-<span data-mask><span>transaction.</span></span>
+<h2 style="margin:0;max-width:22ch;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(44px,7.4vw,120px);line-height:.96;letter-spacing:-.056em;color:#FAF8F3">
+<span data-mask><span>Rien ne se négocie</span></span>
+<span data-mask><span>avant d’être</span></span>
+<span data-mask><span>mesuré.</span></span>
 </h2>
 </div>
 
 <div style="padding:0 40px clamp(40px,4.6vw,64px)">
 <div data-r style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:22px;padding-top:22px;border-top:1px solid rgba(247,245,240,.34)">
-<p style="grid-column:7/13;margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:rgba(247,245,240,.68);text-wrap:pretty">Deux divisions, une seule séquence. On documente, on chiffre, on recommande. La négociation vient après, et elle est jugée sur ce qui a été écrit avant.</p>
+<div style="grid-column:1/6;display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 32px">
+<a data-u href="./Conseil-et-gestion.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">Nos services conseil</a>
+<a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,240,.68)">Parler à un conseiller</a>
+</div>
+<p style="grid-column:7/13;margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:rgba(247,245,240,.68);text-wrap:pretty">Les deux divisions suivent la même séquence. Constats consignés, options chiffrées, orientation signée, avant toute mise en marché.</p>
 
 </div>
 </div>
 </section>
 
-<footer data-screen-label="08 Coordonnées" style="background:#FCFBF8;padding:0 0 40px">
+<footer data-screen-label="07 Coordonnées" style="background:#FCFBF8;padding:0 0 40px">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
 
 <div data-cell style="grid-column:1/5">
 <img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:120px;height:15.8px;object-fit:contain;object-position:left center">
-<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Cabinet conseil en immobilier</p>
+<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Conseil stratégique en immobilier</p>
 </div>
 
 <div data-cell style="grid-column:6/8">
@@ -395,13 +365,13 @@ header{view-transition-name:masthead}
 
 <div data-cell style="grid-column:8/11">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Bureau</p>
-<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>C.P. 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
+<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>Bureau 200, C.P. 1848<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
 </div>
 
 <div data-cell style="grid-column:11/13">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Liens</p>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
-<a data-u href="./Cabinet.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Cabinet</a>
+<a data-u href="./Proprietes.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Propriétés</a>
 <a data-u href="#" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">LinkedIn</a>
 <a data-u href="./Confidentialite.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Confidentialité</a>
 <a data-u href="./Mentions-legales.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Mentions légales</a>
@@ -413,7 +383,7 @@ header{view-transition-name:masthead}
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
 <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding-top:20px;border-top:1px solid rgba(30,58,41,.14);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
 <span>© 2026 Panorama</span>
-<span>Agence immobilière — Permis OACIQ H0531</span>
+<span>Permis OACIQ H0531</span>
 </div>
 </div>
 </footer>
@@ -421,14 +391,14 @@ header{view-transition-name:masthead}
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:100,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;},&quot;slabTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;vert&quot;,&quot;encre&quot;],&quot;default&quot;:&quot;vert&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Couleur&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:94,&quot;min&quot;:80,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;},&quot;slabTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;vert&quot;,&quot;encre&quot;],&quot;default&quot;:&quot;vert&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Couleur&quot;}}">
 class Component extends DCLogic {
   state = { onDark: false, menu: false, rail: null };
 
   applyVars() {
     const r = document.documentElement;
-    r.style.setProperty('--wd', String(this.props.displayWidth ?? 112));
-    r.style.setProperty('--slab', this.props.slabTone === 'encre' ? '#141714' : '#1E3A29');
+    r.style.setProperty('--wd', String(this.props.displayWidth ?? 94));
+    r.style.setProperty('--slab', this.props.slabTone === 'encre' ? '#141714' : '#12241B');
   }
 
   setup = () => {

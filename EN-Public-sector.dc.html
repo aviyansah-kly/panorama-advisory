@@ -9,8 +9,7 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panorama — Brokerage and transaction execution | Leasing, sale, acquisition</title>
-<meta name="description" content="Commercial, industrial and institutional brokerage: leasing and tenant representation, sale, acquisition. Execution that follows strategic advice.">
+<title>Government and public sector — Panorama</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -48,7 +47,7 @@ header{view-transition-name:masthead}
 @media (max-width:900px){[data-folio]{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}[data-mask]>span{transform:none!important}[data-r]{opacity:1!important}[data-rule]{transform:none!important}}
 @media (max-width:1180px){[data-nav]{display:none!important}[data-menu]{display:block!important}}
-@media (max-width:900px){[data-cell]{grid-column:1/-1!important}[data-stats]{grid-template-columns:minmax(0,1fr)!important}[data-stats]>div{border-left:none!important;padding-left:0!important}[data-reg]{grid-template-columns:44px minmax(0,1fr)!important}[data-reg]>[data-regtitle]{grid-column:2}[data-reg]>*:last-child{grid-column:2}}
+@media (max-width:900px){[data-cell]{grid-column:1/-1!important}[data-tri]{grid-template-columns:minmax(0,1fr)!important;row-gap:34px!important}[data-reg]{grid-template-columns:44px minmax(0,1fr)!important}[data-reg]>[data-regtitle]{grid-column:2}[data-reg]>*:last-child{grid-column:2}[data-defs]>p{flex-direction:column!important;gap:2px!important}[data-defs]>p>span:first-child{width:auto!important}}
 </style>
 </helmet>
 
@@ -62,12 +61,12 @@ header{view-transition-name:masthead}
 </a>
 <nav data-nav style="align-items:center;gap:30px;margin-left:auto">
 <a data-u href="./EN-Advisory-and-management.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Advisory and management</a>
-<a data-u href="./EN-Brokerage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141714">Brokerage</a>
-<a data-u href="./EN-Public-sector.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Public sector</a>
+<a data-u href="./EN-Brokerage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Brokerage</a>
+<a data-u href="./EN-Public-sector.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141714">Public sector</a>
 <a data-u href="./EN-Indigenous-real-estate.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Indigenous real estate</a>
 <a data-u href="./EN-Firm.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Firm</a>
 <a data-u href="./EN-Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Contact</a>
-<a data-u href="./Courtage.dc.html" style="margin-left:10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">FR</a>
+<a data-u href="./Secteur-public.dc.html" style="margin-left:10px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">FR</a>
 </nav>
 <span data-menu onClick="{{ toggleMenu }}" style="margin-left:auto;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#141714;cursor:pointer;user-select:none">{{ menuLabel }}</span>
 </div>
@@ -76,12 +75,12 @@ header{view-transition-name:masthead}
 <div style="{{ panelStyle }}">
 <div style="padding:90px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
 <a data-u onClick="{{ closeMenu }}" href="./EN-Advisory-and-management.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Advisory and management</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Brokerage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#141714">Brokerage</a>
-<a data-u onClick="{{ closeMenu }}" href="./EN-Public-sector.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Public sector</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Brokerage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Brokerage</a>
+<a data-u onClick="{{ closeMenu }}" href="./EN-Public-sector.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#141714">Public sector</a>
 <a data-u onClick="{{ closeMenu }}" href="./EN-Indigenous-real-estate.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Indigenous real estate</a>
 <a data-u onClick="{{ closeMenu }}" href="./EN-Firm.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Firm</a>
 <a data-u onClick="{{ closeMenu }}" href="./EN-Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Contact</a>
-<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">Français</a>
+<a data-u onClick="{{ closeMenu }}" href="./Secteur-public.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">Français</a>
 </div>
 </div>
 
@@ -93,126 +92,181 @@ header{view-transition-name:masthead}
 </div>
 </div>
 
-<section data-screen-label="00 Brokerage" style="background:#FCFBF8;padding:clamp(116px,11.5vw,168px) 0 clamp(60px,7vw,104px)">
+<section data-screen-label="00 Public sector" style="background:#FCFBF8;padding:clamp(116px,11.5vw,168px) 0 clamp(60px,7vw,104px)">
 <div style="padding:0 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
-<div data-cell style="grid-column:1/11">
-<p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Division — Brokerage and transaction execution</p>
+<div data-cell style="grid-column:1/10">
+<p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Practice area — Government and public sector</p>
 <h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(40px,7vw,112px);line-height:1;letter-spacing:-.056em;color:#141714">
-<span data-mask><span>Leasing, sale,</span></span>
-<span data-mask><span>acquisition.</span></span>
+<span data-mask><span>Cleared to bid.</span></span>
+<span data-mask><span>Ready to deliver.</span></span>
 </h1>
-<p data-r style="margin:clamp(26px,3vw,42px) 0 0;max-width:48ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">We advise first. We execute second.</p>
+<p data-r style="margin:clamp(26px,3vw,42px) 0 0;max-width:56ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Real estate strategy, portfolio analysis, disposition and acquisition for federal, provincial, municipal and institutional buyers. Advisory and management delivered across Canada.</p>
 </div>
-<div data-cell style="grid-column:11/13;padding-bottom:8px">
+<div data-cell style="grid-column:10/13;padding-bottom:8px">
 <div data-r style="display:flex;flex-direction:column;gap:14px;font:400 11px/1.7 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
-<span>Three services</span>
-<span>Five asset types</span>
+<span>Three credentials</span>
+<span>Four contracting routes</span>
 </div>
 </div>
 </div>
 </section>
 
-
-
-<section data-screen-label="01 Services" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="01 Credentials" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>01 — Services</span>
+<span data-r>01 — Credentials and clearances</span>
 <span data-r style="color:#4E5349">03</span>
 </div>
-
-<div style="padding:clamp(38px,4.4vw,70px) 40px 0">
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
+<div data-cell style="grid-column:1/10">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
+<span data-mask><span>Licences, clearance</span></span>
+<span data-mask><span>and contract, in hand.</span></span>
+</h2>
+</div>
+<div data-cell style="grid-column:1/7">
 <div data-r style="border-top:1px solid rgba(30,58,41,.28)">
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:18px 8px 20px 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
+<p data-regtitle style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#141714;text-wrap:pretty">Under contract with the Government of Canada for the disposal of federal buildings and land in Quebec.</p>
+</div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:18px 8px 20px 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
+<p data-regtitle style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#141714;text-wrap:pretty">Security clearance from Public Services and Procurement Canada.</p>
+</div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:18px 8px 20px 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
+<p data-regtitle style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#141714;text-wrap:pretty">Certified Indigenous business by the Canadian Council for Indigenous Business (CCIB) and listed in the Indigenous Business Directory.</p>
+</div>
+</div>
+</div>
+<div data-cell style="grid-column:8/13">
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">All three are held at the same time, which is rare among Indigenous suppliers. Panorama is eligible for set-aside contracts, and Indigenous content is certified contract by contract.</p>
+<div data-r style="display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 32px;margin-top:clamp(28px,3.4vw,48px);padding-top:20px;border-top:1px solid rgba(30,58,41,.22)">
+<a data-u href="./EN-Firm.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141714">All credentials</a>
+<a data-u href="./EN-Properties.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Federal listing on the market</a>
+</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="02 Buying situations" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px);--rh:rgba(30,58,41,.045)">
+<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
+<span data-r>02 — Where buyers reach us</span>
+<span data-r style="color:#4E5349">03</span>
+</div>
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px)">
+<div data-cell style="grid-column:1/10">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
+<span data-mask><span>Three files that</span></span>
+<span data-mask><span>arrive on a deadline.</span></span>
+</h2>
+</div>
+</div>
+<div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
+<div data-tri style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:34px">
+<div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">01 — Dispose of federal real property</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">A property has been declared surplus and the file has to withstand review. Title, condition, environmental status and the buyer market are documented before anything is listed.</p>
+</div>
+<div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">02 — Plan, rationalize or acquire space</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Leases are expiring, occupancy has changed and the portfolio no longer matches the operation. Retention, consolidation and release scenarios are costed before a decision is tabled.</p>
+</div>
+<div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">03 — Deliver a capital project on schedule</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Approvals, funding windows and the tenure of the site govern the schedule long before construction does. The work is set up around them rather than against them.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="03 What we deliver" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
+<span data-r>03 — What we deliver</span>
+<span data-r style="color:#4E5349">Three families</span>
+</div>
+<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px)">
+<div data-cell style="grid-column:1/9">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
+<span data-mask><span>One offer,</span></span>
+<span data-mask><span>on public timelines.</span></span>
+</h2>
+</div>
+</div>
+<div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
+<div data-tri style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:34px">
+<div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">01 — Strategy and portfolio</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Strategic advisory, portfolio rationalization and occupancy strategy, feasibility and strategic studies.</p>
+</div>
+<div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">02 — Transaction and disposition</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Disposition and acquisition advisory, market analysis and opinion of value, due diligence and building condition.</p>
+</div>
+<div data-r style="padding-top:20px;border-top:1px solid rgba(30,58,41,.24)">
+<p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1E3A29">03 — Management and territory</p>
+<p style="margin:0;max-width:34ch;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Property and asset management, lease administration, land use and territorial planning.</p>
+</div>
+</div>
+<div data-r style="margin-top:clamp(30px,3.6vw,48px);padding-top:20px;border-top:1px solid rgba(30,58,41,.22);display:flex;flex-wrap:wrap;gap:14px 32px">
+<a data-u href="./EN-Advisory-and-management.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141714">Advisory and management in detail</a>
+<span style="font:400 clamp(15px,1.1vw,16px)/1.6 'Archivo',sans-serif;color:#4E5349">Delivered on the reporting cycle the contract sets, in a form that can be tabled for approval.</span>
+</div>
+</div>
+</section>
+
+<section data-screen-label="04 How to contract us" style="background:#FCFBF8;padding:0 0 clamp(66px,7.6vw,116px)">
+<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
+<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
+<span data-r>04 — How to contract us</span>
+<span data-r style="color:#4E5349">Federal vehicles</span>
+</div>
+<div style="padding:clamp(52px,5.8vw,88px) 40px 0">
+<div data-r style="margin:0;padding-bottom:clamp(16px,1.8vw,22px);border-bottom:1px solid rgba(30,58,41,.28);display:flex;align-items:baseline;gap:clamp(16px,2.2vw,36px)">
+<span style="flex:none;width:56px;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;color:#1E3A29">04</span>
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(26px,2.6vw,38px);line-height:1.1;letter-spacing:-.038em;color:#1E3A29">Four routes to a contract</h2>
+</div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Leasing and tenant representation</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">New lease, renewal or relocation. The clause that costs money is rarely the rent. It is the escalation, the renewal option and the definition of operating costs. Those are the ones we negotiate.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Professional services supply arrangement</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">For departments that already hold one, work is called up against it without a new solicitation.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Sale</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The value of a building is demonstrated before it goes to market. Income, leases and development potential are documented, so negotiation opens on your numbers.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">ProServices</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Covers requirements below the trade agreement thresholds. The shortest route to a first engagement.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Acquisition</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">The constraints of a site surface too late. Zoning, easements, building condition, expansion capacity. We verify them before the offer, not after.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Regional standing offers for real property services</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Called up task by task in the region the offer covers, for as long as it runs.</p>
 </div>
-</div>
-</div>
-</section>
-
-<section data-screen-label="02 Asset types" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px);--rh:rgba(30,58,41,.045)">
-<div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
-<div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
-<span data-r>02 — Asset types</span>
-<span data-r style="color:#4E5349">05</span>
-</div>
-
-<div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
-<div data-cell style="grid-column:1/7">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
-<span data-mask><span>What we</span></span>
-<span data-mask><span>transact.</span></span>
-</h2>
-</div>
-<div data-cell style="grid-column:7/13">
-<div data-r style="border-top:1px solid rgba(30,58,41,.28)">
-<div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.03em;color:#141714">Offices</p>
-</div>
-<div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.03em;color:#141714">Industrial</p>
-</div>
-<div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.03em;color:#141714">Commercial</p>
-</div>
-<div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.03em;color:#141714">Institutional</p>
-</div>
-<div data-row style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.2vw,32px);padding:16px 8px 18px 0;border-bottom:1px solid rgba(30,58,41,.11)">
-<span style="font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">05</span>
-<p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.2;letter-spacing:-.03em;color:#141714">Land</p>
-</div>
-</div>
+<div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
+<span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-.028em;color:#141714;text-wrap:balance">Directed set-aside contracts</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">A federal buyer may award directly to an eligible Indigenous supplier below the applicable threshold, without competition.</p>
 </div>
 </div>
 </section>
 
-<div style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px)">
-<div data-r data-fig style="position:relative;width:100%;height:clamp(300px,52vh,560px);overflow:hidden;background:#E6E2D9">
-<image-slot id="en-crt-facade" shape="rect" src="./uploads/88.avif" placeholder="Québec building facade, strictly frontal, flat. No real estate staging." style="width:100%;height:100%"></image-slot>
-</div>
-<div style="padding:16px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#4E5349">
-<span data-r>Asset types</span>
-</div>
-</div>
-
-<section data-screen-label="03 Authorized agency" style="background:#12241B;color:#F2EFE6;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="05 Set-asides" style="background:#12241B;color:#F2EFE6;--u:rgba(250,248,243,.9);--rl:rgba(250,248,243,.8);--rh:rgba(250,248,243,.05);padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:rgba(247,245,240,.34)"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8FB39B">
-<span data-r>03 — Authorized real estate agency</span>
-<span data-r>OACIQ · APCIQ · ACI</span>
+<span data-r>05 — Set-asides and Indigenous content</span>
+<span data-r>Contract by contract</span>
 </div>
-
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 <div data-cell style="grid-column:1/7">
 <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(34px,5.4vw,94px);line-height:1;letter-spacing:-.054em;color:#FAF8F3">
-<span data-mask><span>Licensed,</span></span>
-<span data-mask><span>insured,</span></span>
-<span data-mask><span>accountable.</span></span>
+<span data-mask><span>No ramp-up</span></span>
+<span data-mask><span>period.</span></span>
 </h2>
 </div>
 <div data-cell style="grid-column:8/13;align-self:end">
-<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:rgba(247,245,240,.7);text-wrap:pretty">The licence carries coverage under the professional liability insurance fund and accountability to the self-regulatory body.</p>
-<div data-r style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:clamp(22px,2.6vw,40px);padding-top:22px;border-top:1px solid rgba(247,245,240,.24)">
-<a data-u href="./EN-Properties.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">View our properties</a>
-<a data-u href="./EN-Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">Discuss a mandate</a>
-</div>
+<a data-r data-u href="./EN-Contact.dc.html" style="display:inline-block;margin-top:clamp(30px,3.6vw,52px);font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FAF8F3">Discuss a public mandate</a>
 </div>
 <div data-cell style="grid-column:1/13;margin-top:clamp(20px,2.4vw,34px);padding-top:20px;border-top:1px solid rgba(247,245,240,.24);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:14px">
 <p data-r style="grid-column:1/4;margin:0;font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8FB39B">Scope of practice</p>
@@ -221,7 +275,7 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<footer data-screen-label="04 Contact details" style="background:#FCFBF8;padding:0 0 40px">
+<footer data-screen-label="06 Contact details" style="background:#FCFBF8;padding:0 0 40px">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
 <div data-cell style="grid-column:1/5">
@@ -273,6 +327,7 @@ class Component extends DCLogic {
     if (!this._io) {
       this._io = new IntersectionObserver((es) => {
         es.forEach((e) => {
+          // reveal when it enters, or if it is already above the viewport (scrolled past)
           if (!e.isIntersecting && e.boundingClientRect.top >= 0) return;
           e.target.classList.remove('pre');
           e.target.classList.add('in');
@@ -281,6 +336,7 @@ class Component extends DCLogic {
     }
     document.querySelectorAll('[data-r],[data-mask],[data-rule]').forEach((el) => {
       if (el.classList.contains('in')) return;
+      // never hide something the reader has already reached — re-renders replace these nodes
       if (el.getBoundingClientRect().top < window.innerHeight * 0.98) {
         el.classList.remove('pre');
         el.classList.add('in');

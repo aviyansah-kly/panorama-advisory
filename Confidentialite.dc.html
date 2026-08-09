@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
 img{display:block}
 ::selection{background:#1E3A29;color:#FCFBF8}
-[data-mask]{display:block;overflow:hidden}
+[data-mask]{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 [data-mask]>span{display:block;transform:none;transition:transform 1.25s cubic-bezier(.16,.86,.2,1);will-change:transform}
 [data-mask].pre>span{transform:translateY(104%)}
 [data-r]{opacity:1;transition:opacity 1.5s cubic-bezier(.3,.7,.3,1)}
@@ -52,7 +52,7 @@ header{view-transition-name:masthead}
 </style>
 </helmet>
 
-<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;--wd:112;padding-bottom:42px">
+<div style="background:#FCFBF8;font-family:'Archivo',sans-serif;color:#141714;padding-bottom:42px">
 
 <div data-folio aria-hidden="true"><b></b><i></i></div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;background:#FCFBF8;border-bottom:1px solid rgba(30,58,41,.18)">
@@ -63,6 +63,7 @@ header{view-transition-name:masthead}
 <nav data-nav style="align-items:center;gap:30px;margin-left:auto">
 <a data-u href="./Conseil-et-gestion.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Conseil et gestion</a>
 <a data-u href="./Courtage.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Courtage</a>
+<a data-u href="./Secteur-public.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Secteur public</a>
 <a data-u href="./Immobilier-autochtone.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Immobilier autochtone</a>
 <a data-u href="./Cabinet.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Cabinet</a>
 <a data-u href="./Contact.dc.html" style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Contact</a>
@@ -74,11 +75,12 @@ header{view-transition-name:masthead}
 
 <div style="{{ panelStyle }}">
 <div style="padding:90px 40px 44px;display:flex;flex-direction:column;align-items:flex-start;gap:16px">
-<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Conseil et gestion</a>
-<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Courtage</a>
-<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Immobilier autochtone</a>
-<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Cabinet</a>
-<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:26px;line-height:1.2;letter-spacing:-.035em">Contact</a>
+<a data-u onClick="{{ closeMenu }}" href="./Conseil-et-gestion.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Conseil et gestion</a>
+<a data-u onClick="{{ closeMenu }}" href="./Courtage.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Courtage</a>
+<a data-u onClick="{{ closeMenu }}" href="./Secteur-public.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Secteur public</a>
+<a data-u onClick="{{ closeMenu }}" href="./Immobilier-autochtone.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Immobilier autochtone</a>
+<a data-u onClick="{{ closeMenu }}" href="./Cabinet.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Cabinet</a>
+<a data-u onClick="{{ closeMenu }}" href="./Contact.dc.html" style="font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:26px;line-height:1.2;letter-spacing:-.035em;color:#33372F">Contact</a>
 <a data-u onClick="{{ closeMenu }}" href="./EN-Privacy.dc.html" style="margin-top:12px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4E5349">English</a>
 </div>
 </div>
@@ -95,7 +97,7 @@ header{view-transition-name:masthead}
 <div style="padding:0 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,52px);align-items:end">
 <div data-cell style="grid-column:1/10">
 <p data-r style="margin:0 0 clamp(20px,2.4vw,34px);font:500 11px/1.7 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">Confidentialité</p>
-<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(32px,4.8vw,80px);line-height:1;letter-spacing:-.046em;color:#141714">
+<h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(40px,7vw,112px);line-height:1;letter-spacing:-.056em;color:#141714">
 <span data-mask><span>Protection des</span></span>
 <span data-mask><span>renseignements</span></span>
 <span data-mask><span>personnels.</span></span>
@@ -107,7 +109,7 @@ header{view-transition-name:masthead}
 </div>
 </section>
 
-<section data-screen-label="01 Responsable" style="background:#F3F0E9;padding:0 0 clamp(66px,7.6vw,116px)">
+<section data-screen-label="01 Responsable" style="background:#EFE9DC;padding:0 0 clamp(66px,7.6vw,116px)">
 <div data-rule style="height:1px;background:#1E3A29;opacity:.28"></div>
 <div style="padding:20px 40px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E3A29">
 <span data-r>01 — Responsable</span>
@@ -115,13 +117,13 @@ header{view-transition-name:masthead}
 </div>
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(32px,3.8vw,58px)">
 <div data-cell style="grid-column:1/7">
-<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(26px,3.2vw,55px);line-height:1.06;letter-spacing:-.042em;color:#141714">
+<h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(28px,3.6vw,62px);line-height:1.02;letter-spacing:-.046em;color:#141714">
 <span data-mask><span>Une personne</span></span>
 <span data-mask><span>en répond.</span></span>
 </h2>
 </div>
 <div data-cell style="grid-column:8/13">
-<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty;margin-bottom:clamp(24px,2.6vw,36px)">Nadezhda Bundova, directrice de la conformité des opérations immobilières, est responsable de la protection des renseignements personnels chez Panorama. Toute question sur cette politique, toute demande d'accès, de rectification ou de retrait de consentement lui est adressée directement.</p>
+<p data-r style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty;margin-bottom:clamp(24px,2.6vw,36px)">Nadezhda Bundova, directrice de la conformité des opérations immobilières, est responsable de la protection des renseignements personnels chez Panorama. Toute question sur cette politique, toute demande d’accès, de rectification ou de retrait de consentement lui est adressée directement.</p>
 <div data-r style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:20px;border-top:1px solid rgba(30,58,41,.22)">
 <a data-u href="mailto:kwe@panoramaadvisory.ca" style="font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">kwe@panoramaadvisory.ca</a>
 <a data-u href="tel:+15142898222" style="font:400 clamp(16px,1.25vw,18px)/1.4 'Archivo',sans-serif;color:#141714">514.289.8222</a>
@@ -140,48 +142,48 @@ header{view-transition-name:masthead}
 <div data-r style="border-top:1px solid rgba(30,58,41,.28)">
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">01</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Ce que nous recueillons</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Les renseignements que vous nous transmettez: nom, entreprise, courriel, téléphone et contenu de votre demande. Les renseignements nécessaires à l'exécution d'un mandat: documents de propriété, baux, états financiers d'immeuble, pièces d'identité lorsque la loi l'exige. Les données techniques générées par la visite du site: adresse IP, navigateur, pages consultées.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Ce que nous recueillons</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Les renseignements que vous nous transmettez : nom, entreprise, courriel, téléphone et contenu de votre demande. Les renseignements nécessaires à l’exécution d’un mandat : documents de propriété, baux, états financiers d’immeuble, pièces d’identité lorsque la loi l’exige. Les données techniques générées par la visite du site : adresse IP, navigateur, pages consultées.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">02</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Pourquoi</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Répondre à une demande. Exécuter un mandat et en rendre compte. Respecter nos obligations légales et réglementaires, notamment celles de l'Organisme d'autoréglementation du courtage immobilier du Québec et celles relatives à la lutte contre le recyclage des produits de la criminalité. Améliorer le site. Nous ne recueillons rien qui ne serve à l'une de ces fins.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Pourquoi</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Répondre à une demande. Exécuter un mandat et en rendre compte. Respecter nos obligations légales et réglementaires, notamment celles de l’Organisme d’autoréglementation du courtage immobilier du Québec et celles relatives à la lutte contre le recyclage des produits de la criminalité. Améliorer le site. Nous ne recueillons rien qui ne serve à l’une de ces fins.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">03</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Consentement</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">En nous transmettant vos renseignements, vous consentez à leur utilisation aux fins ci-dessus. Vous pouvez retirer ce consentement en tout temps, sauf lorsque la conservation nous est imposée par la loi ou par les règles de l'OACIQ.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Consentement</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">En nous transmettant vos renseignements, vous consentez à leur utilisation aux fins ci-dessus. Vous pouvez retirer ce consentement en tout temps, sauf lorsque la conservation nous est imposée par la loi ou par les règles de l’OACIQ.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">04</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Communication à des tiers</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Nous ne vendons ni ne louons de renseignements personnels. Nous en communiquons uniquement aux parties nécessaires à la réalisation de votre mandat — notaires, évaluateurs, arpenteurs, institutions financières — avec votre autorisation; à nos fournisseurs technologiques, liés par des engagements de confidentialité; et aux autorités lorsque la loi l'exige.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Communication à des tiers</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Nous ne vendons ni ne louons de renseignements personnels. Nous en communiquons uniquement aux parties nécessaires à la réalisation de votre mandat — notaires, évaluateurs, arpenteurs, institutions financières — avec votre autorisation ; à nos fournisseurs technologiques, liés par des engagements de confidentialité ; et aux autorités lorsque la loi l’exige.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">05</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Hébergement hors Québec</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Certains de nos fournisseurs peuvent héberger des données à l'extérieur du Québec. Nous procédons dans ce cas à l'évaluation des facteurs relatifs à la vie privée prévue par la loi avant toute communication.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Hébergement hors Québec</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Certains de nos fournisseurs peuvent héberger des données à l’extérieur du Québec. Nous procédons dans ce cas à l’évaluation des facteurs relatifs à la vie privée prévue par la loi avant toute communication.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">06</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Conservation</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Les dossiers de courtage sont conservés selon les délais imposés par la réglementation de l'OACIQ. Les autres renseignements sont détruits lorsque la fin pour laquelle ils ont été recueillis est atteinte.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Conservation</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Les dossiers de courtage sont conservés selon les délais imposés par la réglementation de l’OACIQ. Les autres renseignements sont détruits lorsque la fin pour laquelle ils ont été recueillis est atteinte.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">07</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Vos droits</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Vous avez le droit d'accéder à vos renseignements, de les faire rectifier, d'en demander la suppression, de retirer votre consentement, de recevoir dans un format technologique structuré les renseignements que vous nous avez fournis, et de porter plainte auprès de la Commission d'accès à l'information du Québec. Nous répondons dans les trente jours.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Vos droits</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Vous avez le droit d’accéder à vos renseignements, de les faire rectifier, d’en demander la suppression, de retirer votre consentement, de recevoir dans un format technologique structuré les renseignements que vous nous avez fournis, et de porter plainte auprès de la Commission d’accès à l’information du Québec. Nous répondons dans les trente jours.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">08</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Témoins de connexion</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Le site utilise des témoins nécessaires à son fonctionnement et des témoins de mesure d'audience. Vous pouvez les refuser dans les réglages de votre navigateur; certaines fonctions du site peuvent alors cesser de fonctionner.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Témoins de connexion</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">Le site utilise des témoins nécessaires à son fonctionnement et des témoins de mesure d’audience. Vous pouvez les refuser dans les réglages de votre navigateur ; certaines fonctions du site peuvent alors cesser de fonctionner.</p>
 </div>
 <div data-row data-reg style="display:grid;grid-template-columns:56px minmax(0,3fr) minmax(0,6fr);gap:clamp(16px,2.2vw,36px);padding:clamp(22px,2.6vw,34px) 8px clamp(20px,2.2vw,30px) 0;border-bottom:1px solid rgba(30,58,41,.11)">
 <span style="font:400 11px/1.9 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;color:#4E5349">09</span>
-<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,112);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Incident de confidentialité</h3>
-<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">En cas d'incident présentant un risque de préjudice sérieux, nous avisons les personnes concernées ainsi que la Commission d'accès à l'information, et nous inscrivons l'incident au registre prévu par la loi.</p>
+<h3 data-regtitle style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-variation-settings:'wdth' var(--wd,94);font-size:clamp(20px,1.9vw,26px);line-height:1.14;letter-spacing:-.036em;color:#141714">Incident de confidentialité</h3>
+<p style="margin:0;font:400 clamp(16px,1.25vw,18px)/1.66 'Archivo',sans-serif;color:#33372F;text-wrap:pretty">En cas d’incident présentant un risque de préjudice sérieux, nous avisons les personnes concernées ainsi que la Commission d’accès à l’information, et nous inscrivons l’incident au registre prévu par la loi.</p>
 </div>
 </div>
 </div>
@@ -192,7 +194,7 @@ header{view-transition-name:masthead}
 <div style="padding:clamp(38px,4.4vw,70px) 40px 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(30px,3.6vw,50px)">
 <div data-cell style="grid-column:1/5">
 <img src="./assets/panorama-wordmark-ink.png" alt="Panorama" style="width:120px;height:15.8px;object-fit:contain;object-position:left center">
-<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Cabinet conseil en immobilier</p>
+<p style="margin:20px 0 0;font:500 11px/1.9 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Conseil stratégique en immobilier</p>
 </div>
 <div data-cell style="grid-column:6/8">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Divisions</p>
@@ -203,14 +205,14 @@ header{view-transition-name:masthead}
 </div>
 <div data-cell style="grid-column:8/11">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Bureau</p>
-<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>C.P. 2010<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
+<p style="margin:0;font:400 16px/1.66 'Archivo',sans-serif;color:#33372F">Business Complex<br>Bureau 200, C.P. 1848<br>Kahnawà:ke (Québec)<br>J0L 1B0</p>
 </div>
 <div data-cell style="grid-column:11/13">
 <p style="margin:0 0 18px;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Liens</p>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
 <a data-u href="./Accueil.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Accueil</a>
+<a data-u href="./Proprietes.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Propriétés</a>
 <a data-u href="#" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">LinkedIn</a>
-<a data-u href="./Confidentialite.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Confidentialité</a>
 <a data-u href="./Mentions-legales.dc.html" style="font:400 13px/1.4 'Archivo',sans-serif;color:#33372F">Mentions légales</a>
 </div>
 </div>
@@ -218,7 +220,7 @@ header{view-transition-name:masthead}
 <div style="margin-top:clamp(38px,4.4vw,70px);padding:0 40px">
 <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding-top:20px;border-top:1px solid rgba(30,58,41,.14);font:500 9.5px/1.8 'Archivo',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#4E5349">
 <span>© 2026 Panorama</span>
-<span>Agence immobilière — Permis OACIQ H0531</span>
+<span>Permis OACIQ H0531</span>
 </div>
 </div>
 </footer>
@@ -226,12 +228,12 @@ header{view-transition-name:masthead}
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:100,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:94,&quot;min&quot;:80,&quot;max&quot;:125,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typographie&quot;}}">
 class Component extends DCLogic {
   state = { menu: false, sent: false };
 
   applyVars() {
-    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 112));
+    document.documentElement.style.setProperty('--wd', String(this.props.displayWidth ?? 94));
   }
 
   setup = () => {
