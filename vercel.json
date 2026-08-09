@@ -1,0 +1,109 @@
+{
+  "redirects": [
+    {
+      "source": "/Accueil.dc.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Conseil-et-gestion.dc.html",
+      "destination": "/conseil-et-gestion/",
+      "permanent": true
+    },
+    {
+      "source": "/Courtage.dc.html",
+      "destination": "/courtage/",
+      "permanent": true
+    },
+    {
+      "source": "/Secteur-public.dc.html",
+      "destination": "/secteur-public/",
+      "permanent": true
+    },
+    {
+      "source": "/Immobilier-autochtone.dc.html",
+      "destination": "/immobilier-autochtone/",
+      "permanent": true
+    },
+    {
+      "source": "/Cabinet.dc.html",
+      "destination": "/cabinet/",
+      "permanent": true
+    },
+    {
+      "source": "/Proprietes.dc.html",
+      "destination": "/proprietes/",
+      "permanent": true
+    },
+    {
+      "source": "/Contact.dc.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/Confidentialite.dc.html",
+      "destination": "/confidentialite/",
+      "permanent": true
+    },
+    {
+      "source": "/Mentions-legales.dc.html",
+      "destination": "/mentions-legales/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Home.dc.html",
+      "destination": "/en/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Advisory-and-management.dc.html",
+      "destination": "/en/advisory-and-management/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Brokerage.dc.html",
+      "destination": "/en/brokerage/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Public-sector.dc.html",
+      "destination": "/en/public-sector/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Indigenous-real-estate.dc.html",
+      "destination": "/en/indigenous-real-estate/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Firm.dc.html",
+      "destination": "/en/firm/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Properties.dc.html",
+      "destination": "/en/properties/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Contact.dc.html",
+      "destination": "/en/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Privacy.dc.html",
+      "destination": "/en/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/EN-Legal-notice.dc.html",
+      "destination": "/en/legal-notice/",
+      "permanent": true
+    },
+    {
+      "source": "/conseil-gestion",
+      "destination": "/conseil-et-gestion/",
+      "permanent": true
+    }
+  ]
+}

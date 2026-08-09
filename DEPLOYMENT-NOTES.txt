@@ -1,0 +1,15 @@
+PANORAMA PRODUCTION READY
+
+Upload/extract the CONTENTS of this package directly into public_html.
+Keep hosting system folders such as .well-known and cgi-bin.
+This build preserves the existing clean URLs, adds the new Public Sector pages, restores SEO metadata, LinkedIn, redirects, and the Web3Forms contact form integration.
+Canonical domain: https://panoramaadvisory.ca
+
+After deployment test:
+/
+/secteur-public/
+/en/public-sector/
+/contact/
+/en/contact/
+/sitemap.xml
+/robots.txt
