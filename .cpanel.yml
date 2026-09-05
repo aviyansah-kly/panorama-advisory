@@ -1,5 +1,10 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/panoramaadvisory.ca/
-    - /usr/bin/rsync -a --exclude='.git/' --exclude='.cpanel.yml' --exclude='contact/smtp-config.php' --exclude='contact/smtp-debug.log' --exclude='contact/error_log' --exclude='.user.ini' --exclude='php.ini' ./ "$DEPLOYPATH"
+    - export DEPLOYPATH=/home/carlabro/panoramaadvisory.ca/
+    - /bin/cp -R assets "$DEPLOYPATH"
+    - /bin/cp -R uploads "$DEPLOYPATH"
+    - /bin/cp -R cabinet confidentialite conseil-et-gestion courtage immobilier-autochtone mentions-legales proprietes secteur-public en "$DEPLOYPATH"
+    - /bin/cp index.html support.js image-slot.js robots.txt sitemap.xml _redirects vercel.json DEPLOYMENT-NOTES.txt .htaccess "$DEPLOYPATH"
+    - /bin/mkdir -p "$DEPLOYPATH/contact"
+    - /bin/cp contact/index.html contact/send.php "$DEPLOYPATH/contact/"
