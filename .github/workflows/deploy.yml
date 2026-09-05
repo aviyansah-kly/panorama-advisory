@@ -1,0 +1,47 @@
+name: Auto Deploy Panorama Advisory
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: panorama-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to cPanel
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v6
+
+      - name: Deploy website via FTPS
+        uses: step-security/ftp-deploy-action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: ./
+          log-level: standard
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            .gitignore
+            .cpanel.yml
+            deployment-test.txt
+            contact/smtp-config.php
+            contact/smtp-debug.log
+            contact/error_log
+            .user.ini
+            php.ini
+            cgi-bin/**
+            .well-known/**
