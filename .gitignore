@@ -1,0 +1,9 @@
+# Server-only / sensitive files
+contact/smtp-config.php
+contact/smtp-debug.log
+contact/error_log
+.user.ini
+php.ini
+
+# OS metadata
+.DS_Store
