@@ -150,6 +150,7 @@ header{view-transition-name:masthead}
 
 <div data-cell style="grid-column:5/13">
 <form data-r onSubmit="{{ onSubmit }}">
+<input type="text" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
 <div data-form style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(26px,3.2vw,44px)">
 <label data-field style="display:flex;flex-direction:column;gap:10px">
 <span style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Name</span>
@@ -411,12 +412,16 @@ class Component extends DCLogic {
         this.setState({ sending: true, error: false });
         const form = e.target;
         const data = new FormData(form);
-        data.append('access_key', '449f5183-b9d1-4786-ad72-ed2114d5f01d');
-        data.append('subject', 'New message — panoramaadvisory.ca');
-        fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-          .then((r) => r.json())
-          .then((res) => {
-            if (res.success) { this.setState({ sent: true, sending: false }); form.reset(); }
+        data.append('language', 'en');
+        fetch('/contact/send.php', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(async (r) => {
+            let res = {};
+            try { res = await r.json(); } catch (_) {}
+            if (r.ok && res.success) { this.setState({ sent: true, sending: false }); form.reset(); }
             else { this.setState({ error: true, sending: false }); }
           })
           .catch(() => this.setState({ error: true, sending: false }));
