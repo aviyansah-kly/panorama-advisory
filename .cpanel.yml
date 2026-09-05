@@ -1,4 +1,11 @@
 ---
 deployment:
   tasks:
-    - /bin/cp deployment-test.txt /home/carlabro/panoramaadvisory.ca/deployment-test.txt
+    - export DEPLOYPATH=/home/carlabro/panoramaadvisory.ca/
+    - /bin/cp -R assets "$DEPLOYPATH"
+    - /bin/cp -R uploads "$DEPLOYPATH"
+    - /bin/cp -R cabinet confidentialite conseil-et-gestion courtage immobilier-autochtone mentions-legales proprietes secteur-public en "$DEPLOYPATH"
+    - /bin/cp index.html support.js image-slot.js robots.txt sitemap.xml _redirects vercel.json DEPLOYMENT-NOTES.txt .htaccess "$DEPLOYPATH"
+    - /bin/mkdir -p "$DEPLOYPATH/contact"
+    - /bin/cp contact/index.html contact/send.php "$DEPLOYPATH/contact/"
+    - /bin/rm -f "$DEPLOYPATH/deployment-test.txt"
