@@ -1,0 +1,38 @@
+RewriteEngine On
+
+# Canonical domain: HTTPS + non-www
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.panoramaadvisory\.ca$ [NC]
+RewriteRule ^ https://panoramaadvisory.ca%{REQUEST_URI} [L,R=301]
+
+# Legacy AI-export URLs
+Redirect 301 /Accueil.dc.html /
+Redirect 301 /Conseil-et-gestion.dc.html /conseil-et-gestion/
+Redirect 301 /Courtage.dc.html /courtage/
+Redirect 301 /Secteur-public.dc.html /secteur-public/
+Redirect 301 /Immobilier-autochtone.dc.html /immobilier-autochtone/
+Redirect 301 /Cabinet.dc.html /cabinet/
+Redirect 301 /Proprietes.dc.html /proprietes/
+Redirect 301 /Contact.dc.html /contact/
+Redirect 301 /Confidentialite.dc.html /confidentialite/
+Redirect 301 /Mentions-legales.dc.html /mentions-legales/
+Redirect 301 /EN-Home.dc.html /en/
+Redirect 301 /EN-Advisory-and-management.dc.html /en/advisory-and-management/
+Redirect 301 /EN-Brokerage.dc.html /en/brokerage/
+Redirect 301 /EN-Public-sector.dc.html /en/public-sector/
+Redirect 301 /EN-Indigenous-real-estate.dc.html /en/indigenous-real-estate/
+Redirect 301 /EN-Firm.dc.html /en/firm/
+Redirect 301 /EN-Properties.dc.html /en/properties/
+Redirect 301 /EN-Contact.dc.html /en/contact/
+Redirect 301 /EN-Privacy.dc.html /en/privacy/
+Redirect 301 /EN-Legal-notice.dc.html /en/legal-notice/
+
+# Compatibility route from the new handoff suggestion
+Redirect 301 /conseil-gestion /conseil-et-gestion/
+Redirect 301 /conseil-gestion/ /conseil-et-gestion/
+
+# Remove direct index.html requests
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+
+DirectoryIndex index.html
