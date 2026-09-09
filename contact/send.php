@@ -125,6 +125,26 @@ $fromEmail = (string)$config['from_email'];
 $fromName = (string)$config['from_name'];
 $recipients = $config['recipients'] ?? [];
 
+// Safety recipients: always keep Panorama's principal mailbox and Avi copied
+// even if the server-only smtp-config.php still contains an outdated recipient list.
+$requiredRecipients = [
+    ['name' => 'Benoit Loyer', 'email' => 'ben@panoramaadvisory.ca'],
+    ['name' => 'Avi Yansah', 'email' => 'aviyansah@gmail.com'],
+];
+
+$seenRecipients = [];
+$normalizedRecipients = [];
+foreach (array_merge($recipients, $requiredRecipients) as $recipient) {
+    $to = strtolower(trim((string)($recipient['email'] ?? '')));
+    if (!filter_var($to, FILTER_VALIDATE_EMAIL) || isset($seenRecipients[$to])) continue;
+    $seenRecipients[$to] = true;
+    $normalizedRecipients[] = [
+        'name' => trim((string)($recipient['name'] ?? '')),
+        'email' => $to,
+    ];
+}
+$recipients = $normalizedRecipients;
+
 if (!$recipients) respond(500, false, 'No recipients configured.');
 
 $errno = 0;
