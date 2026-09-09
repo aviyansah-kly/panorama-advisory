@@ -83,12 +83,6 @@ if ($decoded === null && json_last_error() !== JSON_ERROR_NONE) {
     sb_respond(502, ['success' => false, 'message' => 'Invalid property feed response.']);
 }
 
-$payload = json_encode([
-    'success' => true,
-    'synced_at' => gmdate('c'),
-    'data' => $decoded,
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-@file_put_contents($cacheFile, $payload, LOCK_EX);
+@file_put_contents($cacheFile, $response, LOCK_EX);
 header('X-Syncbroker-Cache: MISS');
-echo $payload;
+echo $response;
