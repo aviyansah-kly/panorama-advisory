@@ -78,9 +78,8 @@
   };
 
   const detailOf = (p) => {
-    if (p.url_desc_detaillee) return p.url_desc_detaillee;
     if (p.no_inscription) {
-      return 'https://passerelle.centris.ca/redirect.aspx?CodeDest=SYNCBROKER&NoMLS=' + encodeURIComponent(p.no_inscription);
+      return (isEn ? '/properties/' : '/proprietes/') + encodeURIComponent(p.no_inscription) + '/';
     }
     return '#';
   };
