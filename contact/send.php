@@ -129,6 +129,9 @@ $recipients = $config['recipients'] ?? [];
 // even if the server-only smtp-config.php still contains an outdated recipient list.
 $requiredRecipients = [
     ['name' => 'Benoit Loyer', 'email' => 'ben@panoramaadvisory.ca'],
+];
+
+$optionalRecipients = [
     ['name' => 'Avi Yansah', 'email' => 'aviyansah@gmail.com'],
 ];
 
@@ -191,17 +194,38 @@ try {
     smtp_debug('SMTP AUTHENTICATION SUCCESSFUL');
     smtp_cmd($socket, 'MAIL FROM:<' . $fromEmail . '>', [250]);
 
+    $acceptedRecipients = [];
+
     foreach ($recipients as $recipient) {
         $to = $recipient['email'] ?? '';
         if (!filter_var($to, FILTER_VALIDATE_EMAIL)) continue;
-        smtp_debug('Adding recipient: ' . $to);
+        smtp_debug('Adding required recipient: ' . $to);
         smtp_cmd($socket, 'RCPT TO:<' . $to . '>', [250, 251]);
+        $acceptedRecipients[] = $recipient;
+    }
+
+    // External copy is best-effort only. Some Exchange SMTP relays reject
+    // external recipients with 550 while still accepting local recipients.
+    foreach ($optionalRecipients as $recipient) {
+        $to = $recipient['email'] ?? '';
+        if (!filter_var($to, FILTER_VALIDATE_EMAIL)) continue;
+        try {
+            smtp_debug('Adding optional recipient: ' . $to);
+            smtp_cmd($socket, 'RCPT TO:<' . $to . '>', [250, 251]);
+            $acceptedRecipients[] = $recipient;
+        } catch (Throwable $copyError) {
+            smtp_debug('OPTIONAL RECIPIENT REJECTED: ' . $to . ' — ' . $copyError->getMessage());
+        }
+    }
+
+    if (!$acceptedRecipients) {
+        throw new RuntimeException('No recipients accepted by SMTP server.');
     }
 
     smtp_cmd($socket, 'DATA', [354]);
 
     $toHeaderParts = [];
-    foreach ($recipients as $recipient) {
+    foreach ($acceptedRecipients as $recipient) {
         $to = $recipient['email'] ?? '';
         if (!filter_var($to, FILTER_VALIDATE_EMAIL)) continue;
         $rname = trim((string)($recipient['name'] ?? ''));
