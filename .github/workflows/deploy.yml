@@ -41,6 +41,8 @@ jobs:
             contact/smtp-config.php
             contact/smtp-debug.log
             contact/error_log
+            proprietes/syncbroker-config.php
+            proprietes/syncbroker-cache.json
             .user.ini
             php.ini
             cgi-bin/**
