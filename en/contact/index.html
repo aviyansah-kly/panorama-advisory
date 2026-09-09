@@ -187,8 +187,8 @@ header{view-transition-name:masthead}
 </label>
 
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:clamp(36px,4.5vw,64px)">
-<button data-send type="submit" style="padding:17px 36px;border:1px solid #141714;background:#141714;color:#FCFBF8;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:0">Talk to an advisor</button>
-<p style="margin:0;font:400 11px/1.8 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;color:#4E5349"></p>
+<button data-send type="submit" style="padding:17px 36px;border:1px solid #141714;background:#141714;color:#FCFBF8;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:0">{{ sendLabel }}</button>
+<div role="status" aria-live="polite" style="{{ formStatusStyle }}">{{ formNote }}</div>
 </div>
 </form>
 </div>
@@ -421,18 +421,38 @@ class Component extends DCLogic {
           .then(async (r) => {
             let res = {};
             try { res = await r.json(); } catch (_) {}
-            if (r.ok && res.success) { this.setState({ sent: true, sending: false }); form.reset(); }
-            else { this.setState({ error: true, sending: false }); }
+            if (r.ok && res.success) {
+              form.reset();
+              this.setState({ sent: true, sending: false, error: false });
+            } else {
+              this.setState({ error: true, sent: false, sending: false });
+            }
           })
-          .catch(() => this.setState({ error: true, sending: false }));
+          .catch(() => this.setState({ error: true, sent: false, sending: false }));
       },
-      formNote: this.state.sending
+      sendLabel: this.state.sending
         ? 'Sending…'
         : this.state.sent
-        ? 'Message sent — thank you, we will get back to you shortly.'
+        ? 'Message sent'
+        : 'Talk to an advisor',
+      formNote: this.state.sending
+        ? 'Sending your message…'
+        : this.state.sent
+        ? '✓ Message sent successfully. Thank you — we will contact you shortly.'
         : this.state.error
-        ? 'Something went wrong — please email kwe@panoramaadvisory.ca'
+        ? 'Something went wrong. Your message was not sent — please email kwe@panoramaadvisory.ca.'
         : '',
+      formStatusStyle: [
+        'margin:0',
+        'padding:' + ((this.state.sent || this.state.error || this.state.sending) ? '12px 16px' : '0'),
+        'border:' + (this.state.sent ? '1px solid rgba(30,58,41,.35)' : this.state.error ? '1px solid rgba(125,40,40,.35)' : '0'),
+        'background:' + (this.state.sent ? 'rgba(30,58,41,.07)' : this.state.error ? 'rgba(125,40,40,.06)' : 'transparent'),
+        'font:500 11px/1.6 IBM Plex Mono,ui-monospace,monospace',
+        'letter-spacing:.08em',
+        'text-transform:uppercase',
+        'color:' + (this.state.error ? '#7D2828' : '#1E3A29'),
+        'max-width:560px'
+      ].join(';'),
       panelStyle: [
         'position:fixed', 'top:0', 'left:0', 'right:0', 'z-index:75',
         'background:#FCFBF8', 'border-bottom:1px solid rgba(30,58,41,.22)', 'overflow:hidden',
