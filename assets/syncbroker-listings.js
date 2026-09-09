@@ -136,6 +136,15 @@
       document.querySelectorAll('[data-sync-count]').forEach(el => {
         el.textContent = String(data.length).padStart(2,'0');
       });
+
+      const frWords = ['Zéro','Une','Deux','Trois','Quatre','Cinq','Six','Sept','Huit','Neuf','Dix'];
+      const enWords = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
+      const countWord = data.length <= 10
+        ? (isEn ? enWords[data.length] : frWords[data.length])
+        : String(data.length);
+      document.querySelectorAll('[data-sync-count-word]').forEach(el => {
+        el.textContent = countWord + (isEn ? ' properties' : ' propriétés');
+      });
     })
     .catch(() => {});
 })();
