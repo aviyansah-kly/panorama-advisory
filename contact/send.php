@@ -172,26 +172,34 @@ smtp_debug('SMTP CONNECTION SUCCESSFUL');
 stream_set_timeout($socket, 15);
 
 try {
+    $smtpStage = 'greeting';
     smtp_debug('Waiting for SMTP greeting...');
     smtp_expect($socket, [220]);
     $serverName = $_SERVER['SERVER_NAME'] ?? 'panoramaadvisory.ca';
+    $smtpStage = 'EHLO';
     smtp_cmd($socket, 'EHLO ' . $serverName, [250]);
 
     // Port 587/25 requires STARTTLS; port 465 is implicit TLS.
     if ($port !== 465) {
+        $smtpStage = 'STARTTLS';
         smtp_cmd($socket, 'STARTTLS', [220]);
         $cryptoOk = @stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
         if ($cryptoOk !== true) {
             throw new RuntimeException('Unable to enable TLS on SMTP connection.');
         }
         smtp_debug('SMTP STARTTLS ENABLED');
+        $smtpStage = 'EHLO after STARTTLS';
         smtp_cmd($socket, 'EHLO ' . $serverName, [250]);
     }
 
+    $smtpStage = 'AUTH LOGIN';
     smtp_cmd($socket, 'AUTH LOGIN', [334]);
+    $smtpStage = 'AUTH username';
     smtp_cmd($socket, base64_encode($username), [334], true);
+    $smtpStage = 'AUTH password';
     smtp_cmd($socket, base64_encode($password), [235], true);
     smtp_debug('SMTP AUTHENTICATION SUCCESSFUL');
+    $smtpStage = 'MAIL FROM';
     smtp_cmd($socket, 'MAIL FROM:<' . $fromEmail . '>', [250]);
 
     $acceptedRecipients = [];
@@ -200,6 +208,7 @@ try {
         $to = $recipient['email'] ?? '';
         if (!filter_var($to, FILTER_VALIDATE_EMAIL)) continue;
         smtp_debug('Adding required recipient: ' . $to);
+        $smtpStage = 'RCPT TO required recipient';
         smtp_cmd($socket, 'RCPT TO:<' . $to . '>', [250, 251]);
         $acceptedRecipients[] = $recipient;
     }
@@ -211,6 +220,7 @@ try {
         if (!filter_var($to, FILTER_VALIDATE_EMAIL)) continue;
         try {
             smtp_debug('Adding optional recipient: ' . $to);
+            $smtpStage = 'RCPT TO optional recipient';
             smtp_cmd($socket, 'RCPT TO:<' . $to . '>', [250, 251]);
             $acceptedRecipients[] = $recipient;
         } catch (Throwable $copyError) {
@@ -222,6 +232,7 @@ try {
         throw new RuntimeException('No recipients accepted by SMTP server.');
     }
 
+    $smtpStage = 'DATA';
     smtp_cmd($socket, 'DATA', [354]);
 
     $toHeaderParts = [];
@@ -249,6 +260,7 @@ try {
     $payload = implode("\r\n", $headers) . "\r\n\r\n" . $body;
     $payload = preg_replace('/(^|\r\n)\./', '$1..', $payload);
     fwrite($socket, $payload . "\r\n.\r\n");
+    $smtpStage = 'message body acceptance';
     smtp_expect($socket, [250]);
     smtp_debug('MESSAGE ACCEPTED BY SMTP SERVER');
     smtp_cmd($socket, 'QUIT', [221]);
@@ -261,7 +273,7 @@ try {
     @fclose($socket);
     error_log('Panorama SMTP error: ' . $e->getMessage());
     $publicMessage = preg_match('/SMTP error (\d{3})/', $e->getMessage(), $m)
-        ? 'Mail server rejected the message (SMTP ' . $m[1] . ').'
-        : 'Unable to send message through the mail server.';
+        ? 'Mail server rejected the message (SMTP ' . $m[1] . ' at ' . ($smtpStage ?? 'unknown stage') . ').'
+        : 'Unable to send message through the mail server at ' . ($smtpStage ?? 'unknown stage') . '.';
     respond(502, false, $publicMessage);
 }
