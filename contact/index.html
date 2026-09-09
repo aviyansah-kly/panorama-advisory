@@ -186,8 +186,8 @@ header{view-transition-name:masthead}
 </label>
 
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:clamp(36px,4.5vw,64px)">
-<button data-send type="submit" style="padding:17px 36px;border:1px solid #141714;background:#141714;color:#FCFBF8;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:0">{{ sendLabel }}</button>
-<div role="status" aria-live="polite" style="{{ formStatusStyle }}">{{ formNote }}</div>
+<button data-send type="submit" style="padding:17px 36px;border:1px solid #141714;background:#141714;color:#FCFBF8;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:0">Parler à un conseiller</button>
+<p data-form-status role="status" aria-live="polite" style="margin:0;font:500 11px/1.7 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#1E3A29"></p>
 </div>
 </form>
 </div>
@@ -407,9 +407,16 @@ class Component extends DCLogic {
       railProgress: ((this.state.rail ? this.state.rail.p : 0) * 100).toFixed(2) + '%',
       onSubmit: (e) => {
         e.preventDefault();
-        if (this.state.sending || this.state.sent) return;
-        this.setState({ sending: true, error: false });
+        if (this.state.sending) return;
+        this.setState({ sending: true, error: false, sent: false });
         const form = e.target;
+        const button = form.querySelector('[data-send]');
+        const status = form.querySelector('[data-form-status]');
+        if (button) button.textContent = "Envoi en cours…";
+        if (status) {
+          status.textContent = '';
+          status.style.color = '#1E3A29';
+        }
         const data = new FormData(form);
         data.append('language', 'fr');
         fetch('/contact/send.php', {
@@ -423,35 +430,29 @@ class Component extends DCLogic {
             if (r.ok && res.success) {
               form.reset();
               this.setState({ sent: true, sending: false, error: false });
+              if (button) button.textContent = "Parler à un conseiller";
+              if (status) {
+                status.textContent = "Message envoyé avec succès. Merci — nous vous contacterons rapidement.";
+                status.style.color = '#1E3A29';
+              }
             } else {
               this.setState({ error: true, sent: false, sending: false });
+              if (button) button.textContent = "Parler à un conseiller";
+              if (status) {
+                status.textContent = "Une erreur est survenue. Votre message n’a pas été envoyé — merci d’écrire à kwe@panoramaadvisory.ca.";
+                status.style.color = '#7D2828';
+              }
             }
           })
-          .catch(() => this.setState({ error: true, sent: false, sending: false }));
+          .catch(() => {
+            this.setState({ error: true, sent: false, sending: false });
+            if (button) button.textContent = "Parler à un conseiller";
+            if (status) {
+              status.textContent = "Une erreur est survenue. Votre message n’a pas été envoyé — merci d’écrire à kwe@panoramaadvisory.ca.";
+              status.style.color = '#7D2828';
+            }
+          });
       },
-      sendLabel: this.state.sending
-        ? 'Envoi en cours…'
-        : this.state.sent
-        ? 'Message envoyé'
-        : 'Parler à un conseiller',
-      formNote: this.state.sending
-        ? 'Envoi de votre message…'
-        : this.state.sent
-        ? '✓ Message envoyé avec succès. Merci — nous vous contacterons rapidement.'
-        : this.state.error
-        ? 'Une erreur est survenue. Votre message n’a pas été envoyé — merci d’écrire à kwe@panoramaadvisory.ca.'
-        : '',
-      formStatusStyle: [
-        'margin:0',
-        'padding:' + ((this.state.sent || this.state.error || this.state.sending) ? '12px 16px' : '0'),
-        'border:' + (this.state.sent ? '1px solid rgba(30,58,41,.35)' : this.state.error ? '1px solid rgba(125,40,40,.35)' : '0'),
-        'background:' + (this.state.sent ? 'rgba(30,58,41,.07)' : this.state.error ? 'rgba(125,40,40,.06)' : 'transparent'),
-        'font:500 11px/1.6 IBM Plex Mono,ui-monospace,monospace',
-        'letter-spacing:.08em',
-        'text-transform:uppercase',
-        'color:' + (this.state.error ? '#7D2828' : '#1E3A29'),
-        'max-width:560px'
-      ].join(';'),
       panelStyle: [
         'position:fixed', 'top:0', 'left:0', 'right:0', 'z-index:75',
         'background:#FCFBF8', 'border-bottom:1px solid rgba(30,58,41,.22)', 'overflow:hidden',
