@@ -440,7 +440,8 @@ class Component extends DCLogic {
               this.setState({ error: true, sent: false, sending: false });
               if (button) button.textContent = "Talk to an advisor";
               if (status) {
-                status.textContent = "Something went wrong. Your message was not sent — please email kwe@panoramaadvisory.ca.";
+                const detail = (res && res.message) ? ' (' + res.message + ')' : '';
+                status.textContent = "Something went wrong. Your message was not sent — please email kwe@panoramaadvisory.ca." + detail;
                 status.style.color = '#7D2828';
               }
             }
