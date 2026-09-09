@@ -152,8 +152,9 @@ $errstr = '';
 smtp_debug('Connecting to SMTP host: ' . $host . ':' . $port);
 smtp_debug('SMTP username: ' . $username);
 smtp_debug('From address: ' . $fromEmail);
+$transportHost = ($port === 465 ? 'ssl://' : 'tcp://') . $host . ':' . $port;
 $socket = @stream_socket_client(
-    'ssl://' . $host . ':' . $port,
+    $transportHost,
     $errno,
     $errstr,
     15,
@@ -172,6 +173,18 @@ try {
     smtp_expect($socket, [220]);
     $serverName = $_SERVER['SERVER_NAME'] ?? 'panoramaadvisory.ca';
     smtp_cmd($socket, 'EHLO ' . $serverName, [250]);
+
+    // Port 587/25 requires STARTTLS; port 465 is implicit TLS.
+    if ($port !== 465) {
+        smtp_cmd($socket, 'STARTTLS', [220]);
+        $cryptoOk = @stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+        if ($cryptoOk !== true) {
+            throw new RuntimeException('Unable to enable TLS on SMTP connection.');
+        }
+        smtp_debug('SMTP STARTTLS ENABLED');
+        smtp_cmd($socket, 'EHLO ' . $serverName, [250]);
+    }
+
     smtp_cmd($socket, 'AUTH LOGIN', [334]);
     smtp_cmd($socket, base64_encode($username), [334], true);
     smtp_cmd($socket, base64_encode($password), [235], true);
@@ -223,5 +236,8 @@ try {
     @fwrite($socket, "QUIT\r\n");
     @fclose($socket);
     error_log('Panorama SMTP error: ' . $e->getMessage());
-    respond(502, false, 'Unable to send message.');
+    $publicMessage = preg_match('/SMTP error (\d{3})/', $e->getMessage(), $m)
+        ? 'Mail server rejected the message (SMTP ' . $m[1] . ').'
+        : 'Unable to send message through the mail server.';
+    respond(502, false, $publicMessage);
 }
