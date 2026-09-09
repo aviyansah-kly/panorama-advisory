@@ -31,6 +31,10 @@ Redirect 301 /EN-Legal-notice.dc.html /en/legal-notice/
 Redirect 301 /conseil-gestion /conseil-et-gestion/
 Redirect 301 /conseil-gestion/ /conseil-et-gestion/
 
+# Dynamic Syncbroker property deep links
+RewriteRule ^properties/([0-9]+)/?$ properties/detail.php?id=$1&lang=en [L,QSA]
+RewriteRule ^proprietes/([0-9]+)/?$ properties/detail.php?id=$1&lang=fr [L,QSA]
+
 # Remove direct index.html requests
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
 RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
