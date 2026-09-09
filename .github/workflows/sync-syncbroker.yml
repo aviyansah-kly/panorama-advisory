@@ -1,0 +1,36 @@
+name: Sync Syncbroker Properties
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 0,12 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Fetch property feed
+        env:
+          SYNCBROKER_FEED_URL: ${{ secrets.SYNCBROKER_FEED_URL }}
+        run: |
+          test -n "$SYNCBROKER_FEED_URL"
+          mkdir -p data
+          curl --fail --silent --show-error --location             --header "Accept: application/json"             "$SYNCBROKER_FEED_URL"             --output data/syncbroker-properties.json
+          python -m json.tool data/syncbroker-properties.json >/dev/null
+
+      - name: Commit updated feed
+        run: |
+          if git diff --quiet -- data/syncbroker-properties.json; then
+            echo "No property changes."
+            exit 0
+          fi
+          git config user.name "panorama-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/syncbroker-properties.json
+          git commit -m "Update Syncbroker property feed"
+          git push
