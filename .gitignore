@@ -7,3 +7,7 @@ php.ini
 
 # OS metadata
 .DS_Store
+
+# Syncbroker server-only files
+proprietes/syncbroker-config.php
+proprietes/syncbroker-cache.json
