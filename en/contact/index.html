@@ -151,6 +151,8 @@ header{view-transition-name:masthead}
 <div data-cell style="grid-column:5/13">
 <form data-r onSubmit="{{ onSubmit }}" data-contact-form="en">
 <input type="text" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
+<input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
+<input type="hidden" name="form_started" value="">
 <div data-form style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(26px,3.2vw,44px)">
 <label data-field style="display:flex;flex-direction:column;gap:10px">
 <span style="font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4E5349">Name</span>
@@ -356,6 +358,9 @@ class Component extends DCLogic {
   componentDidMount() {
     this.applyVars();
     this.setup();
+    document.querySelectorAll('input[name="form_started"]').forEach((el) => {
+      if (!el.value) el.value = String(Math.floor(Date.now() / 1000));
+    });
     this._safety = setTimeout(this.failOpen, 1700);
     this.folio();
     this._onScroll = () => this.failOpen();
@@ -430,6 +435,8 @@ class Component extends DCLogic {
             try { res = await r.json(); } catch (_) {}
             if (r.ok && res.success) {
               form.reset();
+              const started = form.querySelector('input[name="form_started"]');
+              if (started) started.value = String(Math.floor(Date.now() / 1000));
               this.setState({ sent: true, sending: false, error: false });
               if (button) button.textContent = "Talk to an advisor";
               if (status) {
