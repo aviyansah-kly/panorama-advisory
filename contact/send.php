@@ -32,10 +32,59 @@ if ($origin !== '') {
     }
 }
 
-// Honeypot: silently accept bots so they do not retry.
-if (!empty($_POST['website_url'] ?? '')) {
+// Reject oversized automated submissions before doing any SMTP work.
+if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 50000) {
+    respond(413, false, 'Request too large.');
+}
+
+// Honeypots: silently accept obvious bots so they do not keep retrying.
+if (!empty($_POST['website_url'] ?? '') || !empty($_POST['company_website'] ?? '')) {
+    smtp_debug('SPAM BLOCKED: honeypot triggered');
     respond(200, true, 'OK');
 }
+
+// Legitimate visitors need a few seconds to read and complete the form.
+// The timestamp is populated client-side when the page is mounted.
+$formStarted = (int)($_POST['form_started'] ?? 0);
+$elapsed = $formStarted > 0 ? time() - $formStarted : 0;
+if ($formStarted <= 0 || $elapsed < 3) {
+    smtp_debug('SPAM BLOCKED: form submitted too quickly or missing timing token');
+    respond(200, true, 'OK');
+}
+
+// If Referer is present, require it to originate from Panorama.
+$referer = $_SERVER['HTTP_REFERER'] ?? '';
+if ($referer !== '') {
+    $refererHost = parse_url($referer, PHP_URL_HOST);
+    if (!$refererHost || !in_array(strtolower($refererHost), $allowedHosts, true)) {
+        smtp_debug('SPAM BLOCKED: invalid referer');
+        respond(403, false, 'Invalid request source.');
+    }
+}
+
+// Lightweight IP rate limiting: max 8 form attempts per 15 minutes.
+$clientIp = trim((string)($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
+$rateDir = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'panorama-contact-rate';
+if (!is_dir($rateDir)) {
+    @mkdir($rateDir, 0700, true);
+}
+$rateFile = $rateDir . DIRECTORY_SEPARATOR . hash('sha256', $clientIp) . '.json';
+$now = time();
+$windowStart = $now - 900;
+$attempts = [];
+if (is_file($rateFile)) {
+    $decoded = json_decode((string)@file_get_contents($rateFile), true);
+    if (is_array($decoded)) {
+        $attempts = array_values(array_filter($decoded, static fn($ts) => is_int($ts) && $ts >= $windowStart));
+    }
+}
+if (count($attempts) >= 8) {
+    smtp_debug('SPAM BLOCKED: rate limit exceeded for IP hash ' . substr(hash('sha256', $clientIp), 0, 12));
+    header('Retry-After: 900');
+    respond(429, false, 'Too many attempts. Please try again later.');
+}
+$attempts[] = $now;
+@file_put_contents($rateFile, json_encode($attempts), LOCK_EX);
 
 $configFile = __DIR__ . '/smtp-config.php';
 if (!is_file($configFile)) {
@@ -65,6 +114,51 @@ if ($name === '' || $email === '' || $message === '') {
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/', $email)) {
     respond(422, false, 'Invalid email address.');
+}
+
+// The public form only offers these topics. Reject injected values.
+$allowedTopics = [
+    'Appel d’offres ou approvisionnement',
+    'Conseil et gestion',
+    'Immobilier autochtone',
+    'Courtage',
+    'Autre',
+    'Public tender or procurement',
+    'Advisory and management',
+    'Indigenous real estate',
+    'Brokerage',
+    'Other',
+];
+if ($topic !== '' && !in_array($topic, $allowedTopics, true)) {
+    smtp_debug('SPAM BLOCKED: invalid topic');
+    respond(422, false, 'Invalid subject.');
+}
+
+// Most legitimate inquiries contain zero or one link. Bulk-link messages are
+// overwhelmingly automated spam, so quietly discard messages containing >2.
+$urlCount = preg_match_all('~(?:https?://|www\.)[^\s<]+~iu', $message, $urlMatches);
+if ($urlCount !== false && $urlCount > 2) {
+    smtp_debug('SPAM BLOCKED: excessive URLs');
+    respond(200, true, 'OK');
+}
+
+// Block a few high-confidence machine-generated patterns without penalizing
+// normal business language.
+$spamCorpus = mb_strtolower($name . ' ' . $organization . ' ' . $message);
+$highConfidencePatterns = [
+    '/\bseo\s+(?:service|services|agency|expert)\b/u',
+    '/\bguest\s+post(?:ing)?\b/u',
+    '/\bbacklinks?\b/u',
+    '/\bcrypto(?:currency)?\s+(?:investment|promotion|offer)\b/u',
+    '/\b(?:casino|gambling)\s+(?:links?|promotion|offer)\b/u',
+];
+$spamHits = 0;
+foreach ($highConfidencePatterns as $pattern) {
+    if (preg_match($pattern, $spamCorpus)) $spamHits++;
+}
+if ($spamHits >= 2) {
+    smtp_debug('SPAM BLOCKED: high-confidence spam patterns');
+    respond(200, true, 'OK');
 }
 
 $subject = $language === 'en'
