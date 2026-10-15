@@ -230,7 +230,7 @@ $username = (string)$config['username'];
 $password = (string)$config['password'];
 $fromEmail = (string)$config['from_email'];
 $fromName = (string)$config['from_name'];
-$recipients = $config['recipients'] ?? [];
+$recipients = []; // October handoff: deliver only to the agreed Panorama contact mailbox.
 
 // Safety recipients: always keep Panorama's principal mailbox and Avi copied
 // even if the server-only smtp-config.php still contains an outdated recipient list.
