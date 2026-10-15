@@ -40,3 +40,10 @@ RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
 RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
 
 DirectoryIndex index.html
+
+# Refresh HTML when the website is replaced; allow assets to keep normal caching.
+<IfModule mod_headers.c>
+  <FilesMatch "\\.(?:html|htm)$">
+    Header always set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
