@@ -112,6 +112,9 @@ $language = (($_POST['language'] ?? '') === 'en') ? 'en' : 'fr';
 if ($name === '' || $email === '' || $message === '') {
     respond(422, false, 'Please complete the required fields.');
 }
+if (($_POST['privacy_consent'] ?? '') !== 'yes') {
+    respond(422, false, 'Please accept the privacy policy.');
+}
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/', $email)) {
     respond(422, false, 'Invalid email address.');
 }
@@ -128,6 +131,16 @@ $allowedTopics = [
     'Indigenous real estate',
     'Brokerage',
     'Other',
+    'Vente',
+    'Acquisition',
+    'Location',
+    'Conseil',
+    'Secteur public et appels d’offres',
+    'Sales',
+    'Acquisitions',
+    'Leasing',
+    'Advisory',
+    'Public sector and tenders',
 ];
 if ($topic !== '' && !in_array($topic, $allowedTopics, true)) {
     smtp_debug('SPAM BLOCKED: invalid topic');
@@ -217,12 +230,12 @@ $username = (string)$config['username'];
 $password = (string)$config['password'];
 $fromEmail = (string)$config['from_email'];
 $fromName = (string)$config['from_name'];
-$recipients = $config['recipients'] ?? [];
+$recipients = []; // October handoff: deliver only to the agreed Panorama contact mailbox.
 
 // Safety recipients: always keep Panorama's principal mailbox and Avi copied
 // even if the server-only smtp-config.php still contains an outdated recipient list.
 $requiredRecipients = [
-    ['name' => 'Benoit Loyer', 'email' => 'ben@panoramaadvisory.ca'],
+    ['name' => 'Panorama Advisory', 'email' => 'kwe@panoramaadvisory.ca'],
 ];
 
 $optionalRecipients = [
