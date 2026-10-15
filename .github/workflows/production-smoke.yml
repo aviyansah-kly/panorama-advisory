@@ -1,0 +1,34 @@
+name: Panorama Production Smoke Test
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify deployed bilingual pages and assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://panoramaadvisory.ca"
+          ok=0
+          for path in / /en/ /courtage/ /en/brokerage/ /contact/ /en/contact/ /proprietes/ /en/properties/ /assets/panorama-oct/logo-ink.png; do
+            pass=0
+            for retry in 1 2 3 4 5; do
+              code=$(curl --connect-timeout 10 --max-time 30 -sSL -o /tmp/page -w '%{http_code}' -H 'Cache-Control: no-cache' "$base$path?deploycheck=${GITHUB_SHA:0:12}" || true)
+              if [ "$code" = 200 ] && [ -s /tmp/page ]; then pass=1; break; fi
+              sleep 6
+            done
+            echo "$path -> HTTP $code"
+            if [ "$pass" != 1 ]; then ok=1; fi
+            if [ "$path" = / ] && [ "$pass" = 1 ]; then
+              grep -q 'panorama-oct' /tmp/page || { echo 'Homepage did not contain October design assets'; ok=1; }
+            fi
+            if [ "$path" = /en/ ] && [ "$pass" = 1 ]; then
+              grep -q 'lang="en-CA"' /tmp/page || { echo 'English homepage language not set'; ok=1; }
+            fi
+          done
+          exit "$ok"
