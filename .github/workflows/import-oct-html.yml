@@ -1,0 +1,54 @@
+name: Import Panorama October HTML into staging
+on:
+  push:
+    branches:
+      - staging/ben-oct-2026-replacement
+    paths:
+      - incoming/panorama-oct-2026-html-only.zip
+permissions:
+  contents: write
+jobs:
+  import-html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate and extract approved HTML routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import zipfile, pathlib, sys
+          root = pathlib.Path('.')
+          expected = {
+            'index.html','conseil-et-gestion/index.html','courtage/index.html',
+            'secteur-public/index.html','cabinet/index.html','contact/index.html',
+            'en/index.html','en/advisory-and-management/index.html',
+            'en/brokerage/index.html','en/public-sector/index.html',
+            'en/firm/index.html','en/contact/index.html',
+          }
+          path = root / 'incoming/panorama-oct-2026-html-only.zip'
+          with zipfile.ZipFile(path) as z:
+            names = set(z.namelist())
+            if names != expected:
+              sys.exit(f'Unexpected archive contents: missing={expected-names}, extra={names-expected}')
+            for name in sorted(expected):
+              data = z.read(name)
+              if b'<html' not in data[:1000].lower() and b'<!doctype html' not in data[:1000].lower():
+                sys.exit(f'Not valid HTML: {name}')
+              target = root / name
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(data)
+          print('All 12 pages successfully imported')
+          PY
+      - name: Commit staged HTML
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          if ! git diff --cached --quiet; then
+            git commit -m "Import 12 October Panorama bilingual pages into staging"
+            git push
+          fi
