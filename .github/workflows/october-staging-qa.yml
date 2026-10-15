@@ -1,0 +1,69 @@
+name: Panorama October Staging QA
+on:
+  push:
+    branches:
+      - staging/ben-oct-2026-replacement
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check bilingual pages, assets and links
+        run: |
+          python3 - <<'PY'
+          import os, re, pathlib, html, sys
+          root=pathlib.Path('.')
+          routes=[
+            'index.html','conseil-et-gestion/index.html','courtage/index.html',
+            'secteur-public/index.html','cabinet/index.html','contact/index.html',
+            'en/index.html','en/advisory-and-management/index.html','en/brokerage/index.html',
+            'en/public-sector/index.html','en/firm/index.html','en/contact/index.html',
+          ]
+          assets=[
+            'benoit-lacoste.webp','benoit-loyer.webp','carla-brown.webp','conseil.jpg',
+            'courtage.jpg','julia-cloutier.webp','kahs-sky-deer.webp','logo-ink.png',
+            'logo-paper.png','nadezhda-bundova.webp','pavillon.jpg','rpa.jpg',
+            'susan-levinger.webp','territoire.jpg',
+          ]
+          errors=[]
+          for f in routes:
+            p=root/f
+            if not p.is_file(): errors.append('MISSING PAGE '+f); continue
+            s=p.read_text('utf-8')
+            if '<html' not in s.lower() or '<title' not in s.lower():errors.append('BAD HTML '+f)
+            for match in re.finditer(r'(?:href|src)\s*=\s*["\']([^"\']+)["\']',s,re.I):
+              h=html.unescape(match.group(1)).split('#')[0].split('?')[0]
+              if not h.startswith('/') or h.startswith('//'):continue
+              if h=='/':target=root/'index.html'
+              else:
+                dest=root/h.lstrip('/')
+                target=(dest/'index.html') if h.endswith('/') else dest
+              if not target.is_file():errors.append(f'{f} -> {h}: missing')
+            if '/en/' in f or f.startswith('en/'):
+              if 'lang="en-CA"' not in s:errors.append('LANG '+f)
+            elif 'lang="fr-CA"' not in s:errors.append('LANG '+f)
+          for f in assets:
+            if not (root/'assets/panorama-oct'/f).is_file():errors.append('MISSING ASSET '+f)
+          for f in ['contact/index.html','en/contact/index.html']:
+            s=(root/f).read_text('utf-8')
+            for needle in ['/contact/send.php','form_started','privacy_consent','data-panorama-contact']:
+              if needle not in s:errors.append(f+' missing '+needle)
+          php=(root/'contact/send.php').read_text('utf-8')
+          for needle in ['kwe@panoramaadvisory.ca','privacy_consent','rateFile']:
+            if needle not in php:errors.append('PHP missing '+needle)
+          en=(root/'en/brokerage/index.html').read_text('utf-8')
+          if 'href="/en/properties/"' not in en:errors.append('BROKERAGE EN LINK')
+          for f in ['proprietes/index.html','en/properties/index.html','properties/detail.php','.htaccess']:
+            if not (root/f).exists():errors.append('PRESERVED ROUTE MISSING '+f)
+          print('Checked 12 bilingual pages, 14 new images, backend and listing routes')
+          if errors:print('\n'.join(errors));sys.exit(1)
+          print('STAGING STATIC QA PASSED')
+          PY
+      - name: PHP lint
+        run: |
+          php -l contact/send.php
+          php -l proprietes/syncbroker.php
+          php -l properties/detail.php
