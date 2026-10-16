@@ -47,6 +47,94 @@ footer{background:#121614;color:#fff;padding:44px 0}
 [data-listing]>:nth-child(4),[data-listing]>:nth-child(5){grid-column:3!important;padding-top:0!important}
 }
 @media(max-width:580px){nav{gap:12px}nav a{font-size:13px}.hero{padding-top:72px}h1{font-size:clamp(52px,13vw,76px)}[data-listing]{grid-template-columns:1fr minmax(0,2fr)!important;gap:12px!important}[data-listing]>:first-child{display:none!important}[data-listing]>:nth-child(2){grid-column:1}[data-listing]>:nth-child(3){grid-column:2}[data-listing]>:nth-child(4),[data-listing]>:nth-child(5){grid-column:2!important}[data-sync-listings]>div[data-listing]{display:none!important}.catalog-top{align-items:start}}
+
+/* Properties listing refinement — October 2026 */
+.catalog .wrap{max-width:1360px}
+.catalog-top{align-items:baseline}
+.catalog-top h2{font-size:clamp(32px,4.2vw,56px);line-height:1.13}
+.catalog-top .count{font-size:14px;white-space:nowrap}
+.listing-wrap{margin-top:24px}
+[data-sync-listings]>[data-listing]{
+  display:grid!important;
+  grid-template-columns:minmax(150px,196px) minmax(0,1fr) minmax(100px,130px) minmax(130px,158px)!important;
+  gap:clamp(18px,2.3vw,34px)!important;
+  align-items:start!important;
+  padding:26px 0!important;
+  border-bottom:1px solid #d7dfd9!important;
+  font-size:14px!important;
+  line-height:1.55!important;
+  letter-spacing:normal!important;
+  text-transform:none!important;
+}
+[data-sync-listings]>[data-listing]>*:first-child{display:none!important}
+[data-sync-listings]>[data-listing]>*:nth-child(2){grid-column:1;min-width:0}
+[data-sync-listings]>[data-listing]>*:nth-child(3){grid-column:2;min-width:0;gap:8px!important}
+[data-sync-listings]>[data-listing]>*:nth-child(4){grid-column:3;min-width:0}
+[data-sync-listings]>[data-listing]>*:nth-child(5){grid-column:4;min-width:0}
+[data-sync-listings]>[data-listing] img{width:100%!important;aspect-ratio:4/3!important;object-fit:cover;border-radius:5px}
+[data-sync-listings]>a[data-listing]>span:nth-child(3)>span:first-child{
+  font-family:'Schibsted Grotesk',sans-serif!important;font-size:clamp(19px,1.8vw,24px)!important;
+  line-height:1.25!important;font-weight:600!important;letter-spacing:-.025em!important
+}
+[data-sync-listings]>a[data-listing]>span:nth-child(3)>span:nth-child(2){
+  font-family:'Schibsted Grotesk',sans-serif!important;font-size:13px!important;
+  line-height:1.45!important;letter-spacing:.045em!important;color:#637169!important;
+  overflow-wrap:anywhere;text-transform:uppercase
+}
+[data-sync-listings]>a[data-listing]>span:nth-child(3)>span:nth-child(3){
+  font-family:'Schibsted Grotesk',sans-serif!important;font-size:15px!important;
+  line-height:1.55!important;letter-spacing:normal!important;color:#47554c!important;
+  display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:4;
+  overflow:hidden!important;overflow-wrap:anywhere;margin-top:3px!important
+}
+[data-sync-listings]>a[data-listing]>span:nth-child(4){
+  font-family:'Schibsted Grotesk',sans-serif!important;font-size:14px!important;
+  line-height:1.5!important;letter-spacing:normal!important;color:#526057!important;
+  white-space:normal;overflow-wrap:normal
+}
+[data-sync-listings]>a[data-listing]>span:nth-child(5)>span:first-child{
+  font-family:'Schibsted Grotesk',sans-serif!important;font-size:19px!important;
+  font-weight:600!important;line-height:1.4!important;letter-spacing:-.02em!important;
+  white-space:normal;overflow-wrap:normal;color:#121614!important
+}
+[data-sync-listings]>a[data-listing]>span:nth-child(5)>span:nth-child(2){
+  font-family:'Schibsted Grotesk',sans-serif!important;font-size:13px!important;
+  line-height:1.45!important;letter-spacing:normal!important;color:#637169!important
+}
+[data-sync-listings]>div[data-listing]{
+  padding:0 0 14px!important;font-size:13px!important;text-transform:uppercase!important;
+  letter-spacing:.075em!important;font-weight:600!important;color:#53645b!important
+}
+[data-sync-listings]>div[data-listing] span{font-size:13px!important;letter-spacing:.075em!important;line-height:1.4!important}
+[data-sync-listings]>a[data-listing]:hover{background:rgba(31,61,47,.035)!important}
+[data-sync-listings]>a[data-listing]:focus-visible{outline:2px solid #1f3d2f;outline-offset:3px}
+.cta .inner{align-items:center}.cta h2{max-width:720px;font-size:clamp(36px,4.2vw,62px)}
+.cta p{font-size:16px}
+@media(max-width:1020px){
+ [data-sync-listings]>[data-listing]{grid-template-columns:145px minmax(0,1fr) 104px 130px!important;gap:18px!important}
+}
+@media(max-width:760px){
+ [data-sync-listings]>[data-listing]{grid-template-columns:minmax(105px,34%) minmax(0,1fr)!important;
+  gap:12px 18px!important;padding:23px 0!important}
+ [data-sync-listings]>[data-listing]>*:nth-child(2){grid-column:1!important;grid-row:1 / span 3}
+ [data-sync-listings]>[data-listing]>*:nth-child(3){grid-column:2!important;grid-row:1}
+ [data-sync-listings]>[data-listing]>*:nth-child(4){grid-column:2!important;grid-row:2}
+ [data-sync-listings]>[data-listing]>*:nth-child(5){grid-column:2!important;grid-row:3}
+ [data-sync-listings]>div[data-listing]{display:none!important}
+ [data-sync-listings]>a[data-listing]>span:nth-child(3)>span:first-child{font-size:19px!important}
+ [data-sync-listings]>a[data-listing]>span:nth-child(3)>span:nth-child(3){font-size:14px!important;-webkit-line-clamp:3}
+ [data-sync-listings]>a[data-listing]>span:nth-child(5)>span:first-child{font-size:17px!important}
+ .catalog-top{flex-wrap:wrap;gap:12px}
+}
+@media(max-width:420px){
+ .catalog .wrap{padding-inline:18px}
+ [data-sync-listings]>[data-listing]{grid-template-columns:96px minmax(0,1fr)!important;gap:10px 14px!important}
+ [data-sync-listings]>a[data-listing]>span:nth-child(3)>span:first-child{font-size:17px!important}
+ [data-sync-listings]>a[data-listing]>span:nth-child(3)>span:nth-child(3){-webkit-line-clamp:2}
+ .hero h1{font-size:clamp(48px,12vw,66px)}
+ .header-in nav{gap:12px}
+}
+
 </style></head>
 <body>
 <header><div class="wrap header-in"><a href="/en/" aria-label="Panorama home"><img alt="Panorama" src="/assets/panorama-oct/logo-ink.png" style="height:28px;width:auto;display:block"></a>
