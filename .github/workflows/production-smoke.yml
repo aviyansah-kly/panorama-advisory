@@ -31,4 +31,11 @@ jobs:
               grep -q 'lang="en-CA"' /tmp/page || { echo 'English homepage language not set'; ok=1; }
             fi
           done
+          # Verify Cloudflare Web Analytics has reached production, not only the repository.
+          for path in / /en/ /proprietes/ /en/properties/; do
+            check=$(curl -fsSL --retry 3 --max-time 25 -H 'Cache-Control: no-cache' "$base$path?analytics_verify=${GITHUB_SHA:0:12}")
+            printf '%s' "$check" | grep -q '43884f0d3e534deba132ad3a6ce02ccc' || { echo "Missing Cloudflare token on $path"; ok=1; }
+            printf '%s' "$check" | grep -q 'static.cloudflareinsights.com/beacon.min.js' || { echo "Missing beacon script on $path"; ok=1; }
+            echo "$path -> Cloudflare beacon verified"
+          done
           exit "$ok"
