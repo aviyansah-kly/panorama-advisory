@@ -1,0 +1,45 @@
+name: Panorama Analytics Browser Diagnostic
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/analytics-browser-check.yml]
+permissions:
+  contents: read
+jobs:
+  check-beacon:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check browser execution and Cloudflare beacon POST
+        shell: bash
+        run: |
+          set -euo pipefail
+          google-chrome --version || true
+          node --version
+          mkdir -p /tmp/panorama-diag
+          cd /tmp/panorama-diag
+          npm init -y >/dev/null
+          npm install playwright@1.58.2 --no-audit --no-fund >/dev/null
+          cat > check.cjs <<'JS'
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+            const page=await browser.newPage({ignoreHTTPSErrors:false});
+            const events=[];
+            page.on('console',msg=>{if(msg.type()==='error')events.push('CONSOLE '+msg.text().slice(0,250))});
+            page.on('pageerror',err=>events.push('PAGEERROR '+err.message.slice(0,250)));
+            page.on('requestfailed',req=>{if(/cloudflare|cdn-cgi/.test(req.url()))events.push('REQUEST FAILED '+req.url()+' '+req.failure()?.errorText)});
+            page.on('response',res=>{if(/cloudflareinsights|cloudflareinsights\.com|cdn-cgi\/rum/.test(res.url()))events.push('RESPONSE '+res.status()+' '+res.request().method()+' '+res.url())});
+            const res=await page.goto('https://panoramaadvisory.ca/?browserdiagnostic=20261016',{waitUntil:'load',timeout:40000});
+            await page.waitForTimeout(9000);
+            console.log('MAIN RESPONSE',res?.status(),page.url());
+            console.log('BEACON TAG',await page.locator('script[src*="cloudflareinsights"]').count());
+            console.log('CSP',await res?.headerValue('content-security-policy'));
+            console.log('REFERRER POLICY',await res?.headerValue('referrer-policy'));
+            console.log('BROWSER EVENTS',JSON.stringify(events,null,2));
+            const beaconPost=events.some(e=>e.includes('RESPONSE')&&e.includes('POST')&&e.includes('/cdn-cgi/rum'));
+            console.log('BEACON POST CONFIRMED',beaconPost);
+            await browser.close();
+            if(!beaconPost)process.exit(2);
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+          node check.cjs
